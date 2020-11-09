@@ -1,0 +1,67 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+
+\textbf{Q03.} Given that $d=gcd(m,n)$, we can also find that $d = \gcd(m,d)$ as $m|d$. Therefore we can say that:
+
+
+
+To start we will prove $(\{px + qy \colon x, y \in \mathbb Z\} = \mathbb Z)  \Longrightarrow ( p \neq q)$, we will use proof by contrapositive, so the function becomes:
+\begin{align*}
+(p = q) \Longrightarrow (\{px + qy \colon x, y \in \mathbb Z\} \neq \mathbb Z)
+\end{align*}
+If we assume the hypthoesis, the series:
+\begin{align*}
+ (\{px + qy \colon x, y \in \mathbb Z\} \neq \mathbb Z)
+\end{align*}
+becomes:
+\begin{align*}
+ (\{qx + qy \colon x, y \in \mathbb Z\} \neq \mathbb Z)\\
+ (\{q(x + y) \colon x, y \in \mathbb Z\} \neq \mathbb Z)
+\end{align*}
+Notice that:
+\begin{enumerate}
+\item for every value of $q, 2 \leq q$ (as 1, 0 are not prime)
+
+\item for every value of $x, y, (x+y)$ will be every integer
+\end{enumerate}
+This means that $q(x+y)$ or $qx + qy$ will be every integer expect for 1 and -1. As such this means that it is a subset of $\mathbb Z$ but not equal to $\mathbb Z$, or that:
+\begin{align*}
+ (\{qx + py \colon x, y \in \mathbb Z\} \subsetneq \mathbb Z)\\
+\end{align*}
+And so we can conclude that:
+\begin{align*}
+ (\{qx + py \colon x, y \in \mathbb Z\} )\neq \mathbb Z)
+\end{align*}
+We have thus proved the first implication of the if and only if statement.\\\\
+The second impication states that: $( p \neq q) \Longrightarrow (\{px + qy \colon x, y \in \mathbb Z\} = \mathbb Z) $. Since $p$ and $q$ are unique primes such that $d = \gcd(p,q) = 1$, we can find that:
+\begin{align*}
+ \exists  d, a, b  \in  \mathbb Z\,, pa + bq = d = 1\\
+\end{align*}
+We know since $x = ad$  and $y = bd$,  that $px + qy$ becomes:
+\begin{align*}
+px + qy & = p(ad) + q(bd)\\
+& = pad + qbd\\
+& = d(ap + qb)
+\end{align*}
+As $d = 1$ this will become
+\begin{align*}
+ \exists  a, b  \in  \mathbb Z\,,(ap+qb)
+\end{align*}
+Since a and b can be any integer $(ap+qb) $ will equal every integer, this means that $(ap+qb) = \mathbb Z$. Note that $(ap+qb)$ will have the same domain as $ px + qy$ which means  that $ \{px + qy \colon x, y \in \mathbb Z\} = \mathbb Z$, thus proving the second implication.
+
+Therefore since the first and second implication is true, we have proved the if and only if statement.
+
+
+
+\end{document}

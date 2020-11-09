@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 135 Fall 2020: WA06}
+
+\textbf{Q01.} To start we will use EEA to find $x$,$ y$ and $d = gcd(2996, 1520)$
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ x & y & r & q \\ [0.5ex] 
+ \hline\hline
+ 1 & 0 & 2996 & 0 \\ 
+ \hline
+ 0 & 1 & 1520 & 0 \\
+ \hline
+ 1 & -1 & 1476 & 1 \\
+ \hline
+ -1 & 2 & 44 & 1 \\
+ \hline
+ 34 &  -67 & -24 & 33 \\ 
+ \hline
+ -35 & 69  & 20 & 1 \\
+ \hline
+ 69 &  -136 & -4 & 1 \\ 
+ \hline
+ -380 &  749 & 0 & 5\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+According to EEA, the last second row will provide the $x$,$y$ and $d$. in other words this means that $x = 69$, $y = -136$ and $d= gcd(2996, 1520)=4$. Plugging this the original equation we find that:
+\begin{align*}
+2996x + 1520y &= \gcd(2996, 1520)\\
+2996x + 1520y &= d \\
+2996 * (69)+ 1520 * (-136) &= 4\\
+4  &= 4
+\end{align*}
+Therefore  $x = 69$, $y = -136$ and $d= gcd(2996, 1520)=4$.\\
+
+\end{document}

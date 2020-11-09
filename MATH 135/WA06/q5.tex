@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+
+\textbf{Q05.} Let m,n and d be arbitrary integers, and $d=\gcd(m,n)$.We can also state that since $d|m$, $\gcd(m,d) = d$, if we compare the two:
+\begin{align*}
+\gcd(m,d) = \gcd(m,n)
+\end{align*}
+We will then add both sides by $\gcd(m,k)$ where k is any positive integer:
+\begin{align*}
+\gcd(m,k)+\gcd(m,d) = \gcd(m,k)+\gcd(m,n)
+\end{align*}
+We will expand this by using Bezout's Lemma for each value, we will split this into right and left side. Let a1, a2, a3, a4 b1, b2 ,b3 and b4 are some integer:
+\begin{enumerate}
+\item LHS $= \gcd(m,k)+ \gcd(m,d) = (ma1 + kb1) + (ma2 + db2)$
+\item RHS $= \gcd(m,k)+ \gcd(m,n) = (ma3 + kb3) + (ma4 + nb4)$
+\end{enumerate}
+If we set them equal we find that:
+\begin{align*}
+LHS & = RHS\\
+(ma1 + kb1) + (ma2 + db2) & = (ma3 + kb3) + (ma4 + nb4)\\
+(ma1 + ma2) + (kb1 + db2) & = (ma3 + ma4) + (kb3 + nb4)\\
+m(a1+a2) + dk(\frac{b1}{d} + \frac{b2}{k}) & = m(a3+a4) + nk(\frac{b3}{n} + \frac{b4}{k})
+\end{align*}
+Let $a5$ be an integer such that $a5 = (a1+a2)$ and let $a6$ be an integer such that $a6 = (a3+a4)$
+\begin{align*}
+m(a5) + dk(\frac{b1}{d} + \frac{b2}{k}) & = m(a6) + nk(\frac{b3}{n} + \frac{b4}{k})
+\end{align*}
+Let $b5$ be an integer such that $b5 = (\frac{b1}{d} + \frac{b2}{k}$) and let $b6$ be an integer such that $b6 = (\frac{b3}{n} + \frac{b4}{k})$
+\begin{align*}
+m(a5) + dk(b5) & = m(a6) + nk(b6)\\
+\gcd(m, dk)  & = \gcd(m, nk) 
+\end{align*}
+Therefore we have shown that if $d=\gcd(m,n)$ then $\gcd(m, dk) = \gcd(m, nk)$, for all positive integers d, m, k.
+\end{document}

@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+
+
+\begin{align*}
+\binom{2n}{n} & = \frac{2n!}{n!(2n-n)!}\\\\
+&= \frac{2n!}{n!*n!}\\\\
+&= \frac{(2n)*2n-1*(2n-2)*...*(n+2)*(n+1)}{n!}\\\\
+&= \prod_{k=1}^{n}\frac{n+k}{k}\\\\
+&= \prod_{k=1}^{n}(\frac{n}{k}+\frac{k}{k})\\\\
+&= \prod_{k=1}^{n}(\frac{n}{k}+1)\\\\
+\end{align*}
+
+We will now factor out the first term (when $k = 1$)
+\begin{align*}
+\prod_{k=1}^{n}(\frac{n}{k}+1) & = (\frac{n}{1} + 1) \prod_{k=2}^{n}(\frac{n}{k}+1)\\\\
+&=  (n + 1) \prod_{k=2}^{n}(\frac{n}{k}+1)
+\end{align*}
+
+However if we have $n = 1$ , we will get:
+\begin{align*}
+(n + 1) \prod_{k=2}^{1}(\frac{n}{k}+1) & = (n+1)* 1\\\\
+\end{align*}
+
+Therefore as long as $ n > 1 $ , the binomial expression will have a factor of $n+1$. Since it has this factor, the binomial will always be divisible by $n+1$
+
+
+
+\end{document}
