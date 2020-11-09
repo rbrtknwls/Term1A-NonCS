@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+\textbf{Q02A} We will disprove by counter example, consider when  $a = -2$ and $b= 4$, Note that:
+\begin{enumerate}
+\item $\min(a, b) = \min(-2,4) = -2$.
+
+\item$\gcd(a, b) = \gcd(-2,4) = 2$.
+\end{enumerate}
+However since we know that $-2 < 2$, this would imply that for  $a = -2$ and $b= 4$, $\min(a,b) < \gcd(a,b)$. Therefore since this violates the universality of the original statement, the origonal statement is disproved.
+
+\textbf{Q02B} We will disprove by counter example, consider when  $a = 0$ and $b= 2$, Note that:
+\begin{enumerate}
+\item $\min(|a|, |b|) = \min(|0|,|2|) = \min(0,2) = 0$.
+
+\item$\gcd(a, b) = \gcd(0,2) = 2$.
+\end{enumerate}
+However since we know that $0 < 2$, this would imply that for  $a = 0$ and $b= 2$, $\min(|a|,|b|) < \gcd(a,b)$. Therefore since this violates the universality of the original statement, the origonal statement is disproved.
+
+\textbf{Q02C} We will prove by using case analysis, note for all cases $a,b \neq 0$ and a,b are integers.
+ \textbf{The first case will be when a  = b:}
+\begin{enumerate}
+\item $\min(|a|, |b|) = a$
+
+\item$\gcd(a, b) = a$
+\end{enumerate}
+We thus have that $\min(|a|,|b|) = \gcd(a,b)$ when  $a=b$, proving the statement for the first case.
+\textbf{The second case will be when $\pmb{a > b}$ :}
+
+\begin{enumerate}
+\item $\min(|a|, |b|) = b$
+
+\item Let d be an integer such that $\gcd(a, b) = d$
+\end{enumerate}
+
+Since d must be a common divisor of $a$ and $ b$, $d$ is bounded by:
+\begin{align*}
+d \leq b < a
+\end{align*}
+As $d$ is the $\gcd(a,b)$ and $b$ is the $\min(|a|,|b|)$ we have that:
+\begin{align*}
+d &\leq b < a \\
+gcd(a,b) &\leq \min(|a|,|b|) < a
+\end{align*}
+Therefore when $ a > b$, we will have $gcd(a,b) \leq \min(|a|,|b|)$ proving the statement for the second case.
+\textbf{The third case will be when $\pmb{a < b}$ :}
+
+\begin{enumerate}
+\item $\min(|a|, |b|) = a$
+
+\item Let d be an integer such that $\gcd(a, b) = d$
+\end{enumerate}
+
+Since d must be a common divisor of $a$ and $ b$, $d$ is bounded by:
+\begin{align*}
+d \leq a < b
+\end{align*}
+As $d$ is the $\gcd(a,b)$ and $a$ is the $\min(|a|,|b|)$ we have that:
+\begin{align*}
+d &\leq a < b \\
+gcd(a,b) &\leq \min(|a|,|b|) < b
+\end{align*}
+Therefore when $ a < b$, we will have $gcd(a,b) \leq \min(|a|,|b|)$ proving the statement for the third case.
+
+Since the three cases cover all the possible values of $a$,$b$ and they are are true for each case, it must be that for all non-zero integers $a$ and $b$, $\gcd(a, b) \leq \min(|a|, |b|)$.\\
+
+
+\end{document}

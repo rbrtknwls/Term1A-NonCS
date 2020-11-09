@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+We will prove the the binomial equation is divisible by $n+1$, by showing that for any $n\geq1$ that $n+1$ is a factor of the binomial equation
+
+\begin{align*}
+\binom{2n}{n} & = \frac{2n!}{n!(2n-n)!}\\\\
+&= \frac{2n!}{n!*n!}\\
+\end{align*}
+We will divide the numerator by $n!$, notice that this will produce a series of multiplies from $(n+1)$ to $(2n)$ on the numerator and we are left with a series of multiples from $1$ to $n$ on the denominator:
+
+\begin{align*}
+\frac{2n!}{n!*n!} &= \frac{(2n)*2n-1*(2n-2)*...*(n+2)*(n+1)}{n!}\\\\
+&= \prod_{k=1}^{n}(\frac{n+k}{k})\\\\
+&= \prod_{k=1}^{n}(\frac{n}{k}+\frac{k}{k})\\\\
+&= \prod_{k=1}^{n}(\frac{n}{k}+1)\\\\
+\end{align*}
+
+We will now factor out the first term (when $k = 1$) to show that if $n\geq 2$, the binomial expression will equal some real number times $(n+1)$ 
+\begin{align*}
+\prod_{k=1}^{n}(\frac{n}{k}+1) & = (\frac{n}{1} + 1) \prod_{k=2}^{n}(\frac{n}{k}+1)\\\\
+&=  (n + 1) \prod_{k=2}^{n}(\frac{n}{k}+1)
+\end{align*}
+
+However if we have $n = 1$ , we will get $(n+1)$ multiplied by 1
+\begin{align*}
+(n + 1) \prod_{k=2}^{1}(\frac{n}{k}+1) & = (n+1)* 1\\\\
+\end{align*}
+
+Therefore as long as $ n >= 1 $ , the binomial expression will be some real number times $n+1$. Since $n+1$ is thus a factor of the binomial equation, it will always be divisible by $n+1$.
+\end{document}
