@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+\textbf{Q02b} Let n be a positive integer such that $n > 1$, we know from UFT that n can be expressed as:
+\[  n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k} \]
+Where $p_1$,$p_2$,...,$p_k$, $k\geq1$ are a list of prime divisors of n and $\alpha_1$,$\alpha_2$,...,$\alpha_k$ are all non-negative integers. We also know from Part A that the number of positive divisors of $n$ (or $d(n)$) will equal:
+\[  d(n) = (\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1) \]
+For all coprime integers $a$,$b$  such that $ab$ = n. This implies that:
+\[  ab = n \]
+\[  ab =  p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}\]
+Applying UFT to $a$ and $b$ we find that (where $\beta_1$,$\beta_2$,...,$\beta_k$ and $\omega_1$,$\omega_2$,...,$\omega_k$ are non negative integers) :
+\[  (p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k})(p_1^{\omega_1}p_2^{\omega_2}\cdots p_k^{\omega_k}) =  p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}\]
+However before we go futher we know that $a,b$ are coprime this means that $\gcd(a,b)$ = 1, using GCD PF we find that:
+\[ gcd(a,b) =  p_1^{\theta_1}p_2^{\theta_2}\cdots p_k^{\theta_k} \text{ where $\theta_i = \min(\beta_i,\omega_i)$ for i = 1,2,...,k} \]
+\[ 1 =  p_1^{\theta_1}p_2^{\theta_2}\cdots p_k^{\theta_k} \]
+This means that for any prime factor $p_i$,  $\theta_i = 0$ or that $\min(\beta_i,\omega_i) = 0$. Going back to our UFT expansion of $a$ and $b$ this means that:
+\[  (p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k})(p_1^{\omega_1}p_2^{\omega_2}\cdots p_k^{\omega_k}) =  p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}\]
+\[  (p_1^{\beta_1+\omega_1}p_2^{\beta_2+\omega_2}\cdots p_k^{\beta_k+\omega_k}) =  p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}\]
+For any prime factor $p_i$, (either $\beta = 0$ or $\omega = 0$) the equation becomes:
+\[  p_i^{\beta_i+\omega_i} =  p_i^{\alpha_i}\]
+\[  p_i^{\beta_i+0} =  p_i^{\alpha_i} \text{ or }  p_i^{0+\omega_i} =  p_i^{\alpha_i}\]
+\[  p_i^{\beta_i} =  p_i^{\alpha_i} \text{ or }  p_i^{\omega_i} =  p_i^{\alpha_i}\]
+This means that the combinations at each $p_i$ is:
+\[ ( \alpha_i+1) = ( \beta_i+1) \text{ or }   (\alpha_i+1) = ( \omega_i+1) \]
+The total combinations of $n$ will thus become (where $b_{any} \neq c_{any}$):
+\[  d(n) = (\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1) \]
+\[ d (n)= ((\beta_{b1} + 1)(\beta_{b2} + 1)...(\beta_{bk} + 1))((\omega_{c1} + 1)(\omega_{c2} + 1)...(\omega_{ck} + 1))  \]
+From Part A we know that:
+\[ d (a)= ((\beta_{b1} + 1)(\beta_{b2} + 1)...(\beta_{bk} + 1))\text{ and } d(b) = ((\omega_{c1} + 1)(\omega_{c2} + 1)...(\omega_{ck} + 1)) \]
+So this means for all $n$ and all coprime integers $a$,$b$  such that $ab$ = n, 
+\[ d (n)= ((\beta_{b1} + 1)(\beta_{b2} + 1)...(\beta_{bk} + 1))((\omega_{c1} + 1)(\omega_{c2} + 1)...(\omega_{ck} + 1))  \]
+\[ d (ab)= ((\beta_{b1} + 1)(\beta_{b2} + 1)...(\beta_{bk} + 1))((\omega_{c1} + 1)(\omega_{c2} + 1)...(\omega_{ck} + 1))  \]
+\[ d (ab)= (d(a))(d(b))\]
+Proving that d(n) is multiplicative.
+\end{document}

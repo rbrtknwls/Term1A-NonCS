@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+\textbf{Q04} let n be an arbitrary positive integer and let k be a odd arbitrary integer ($1 \leq k \leq n$), to start we will prove that the $\gcd(n,k)$ has no factors of 2.\\\\
+Case 1 ($k = 1$):  By definition this means that:
+\[ \gcd(n,k) = \gcd(n,1) = 1 \]
+Therefore if k = 1 then $\gcd(n,k)$ has no factors of 2.\\\\
+Case 2 ($k > 1$):  We know from UFT that we can express both $k$ and $n$ in terms of their prime factors (g $\leq$ 1):
+\[ n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_g^{\alpha_g} \]
+\[ k = p_1^{\beta_1}p_2^{\beta_2}\cdots p_g^{\beta_g}  \]
+where for $p_i$ (for 0 $\geq i \geq  g$) represent the prime divisors of n where some of the exponents ($\alpha_i$, $\beta_i$) could be zero. We also know that k will always be odd and that $p_1$ is 2, thus its equations become:
+\[ n = 2^{\alpha_1}p_2^{\alpha_2}\cdots p_g^{\alpha_g} \]
+\[ k = 2^{0}p_2^{\beta_2}\cdots p_g^{\beta_g}  \]
+Applying GCD PF we find that:
+\[ k = 2^{0}p_2^{\beta_2}\cdots p_g^{\beta_g}  \]
+Therefore if k = 1 then $\gcd(n,k)$ will be an odd integer
+\[ \gcd(n,k) = 2^{\min(0, \alpha_1)}p_2^{\min(\beta_2, \alpha_2)}\cdots p_g^{\min(\beta_g, \alpha_g)} \]
+\[ \gcd(n,k) = 2^{0}p_2^{\min(\beta_2, \alpha_2)}\cdots p_g^{\min(\beta_g, \alpha_g)} \]
+This means that 2 is not a factor of $\gcd(n,k)$ for all $k > 1$.\\\\\\
+We know that $n$ can be expressed as
+\[ n =\frac{n}{\gcd(n,k)}(\gcd(n,k)) \]
+Let $s$ be the largest non negative integer such that
+\[ 2^s | n \implies 2^s | \frac{n}{\gcd(n,k)}(\gcd(n,k))\]
+We know that $\gcd(n,k)$ will never have a factor of 2, this implies that from GCD PF that
+\[ \gcd(2^s, \gcd(n,k)) = 1\]
+Therefore from CAD we know that
+\[ 2^s | \frac{n}{\gcd(n,k)} \]
+We were given the definiton that
+\[ \frac{n}{\gcd(n, k)}|  \binom{n}{k} \]
+Since
+\[ 2^s | \frac{n}{\gcd(n,k)} \text{ and } \frac{n}{\gcd(n, k)}|  \binom{n}{k}\]
+we thus know that TD applys and the equation becomes $2^s |  \binom{n}{k}$ for all the every possible $s,n$ and $k$.
+
+
+
+\end{document}
