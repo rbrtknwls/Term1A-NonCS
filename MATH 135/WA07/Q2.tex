@@ -7,7 +7,6 @@
 \topmargin -1.1cm
 \setlength{\parskip}{1.5ex}
 
-
 \usepackage{amsfonts,amsmath,amssymb,enumerate}
 
 \begin{document}
@@ -24,15 +23,4 @@ Since we know $c_i$ = $\alpha_i$ + 1, this can be replaced by:
 \[  \text{Total Combinations of d } = (\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1) \]
 Therefore since $d$ is every positive divisor of $n$, the number of divisors of n will be given by $(\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1)$.
 
-\textbf{Q02b} Let $m,n$ both be positive positive integer greater then 1, then by the Unique Factorization Theorem, $n$ can be expressed as:
-\[  n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k} \]
-where $p_1$,$p_2$,...,$p_k$, $k\geq1$ are a list of prime divisors of n and $a_1$,$a_2$,...,$a_k$ are all non-negative integers. From the DFPF, we know that all of $n$'s divisors (known as the integer c) are of the form:
-\[  d = p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k} \text{, where } 0\leq\beta_i\leq\alpha_i \text{ for  }  i = 1,2,...,k\]
-We know from DFPF that for each prime factor of $d$ (known as $p_i$), that its exponent ($\beta_i$) must be bounded by:  0 $\leq \beta_i \leq \alpha_i$. In other words this means that the for $p_i$ the choice is between 0, 1, 2,...,$\alpha_i$ which means that for each $p_i$ the total combinations it can have is $\alpha_i$ + 1. 
-\[ \text{Combinations for each  } p_i = \alpha_i + 1 \]
-Let  $c_i$ corrisponds to the combinations of $p_i$ for $1,2,...,k$, the total combinations of d will be given by:
-\[  \text{Total Combinations of d } = (c_1)(c_2)...(c_k) \]
-Since we know $c_i$ = $\alpha_i$ + 1, this can be replaced by:
-\[  \text{Total Combinations of d } = (\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1) \]
-Therefore since $d$ is every positive divisor of $n$, the number of divisors of n will be given by $(\alpha_1 + 1)(\alpha_2 + 1)...(\alpha_k + 1)$.
 \end{document}
