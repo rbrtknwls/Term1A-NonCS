@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 135 Fall 2020: WA07}
+
+\textbf{Q01a} To start we apply the EEA to create the following table:
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ x & y & r & q \\ [0.5ex] 
+ \hline\hline
+ 0 & 1 & 8050 & 0 \\ 
+ \hline
+ 1 & 0 & 1771 & 0 \\
+ \hline
+ -4 & 1 & 966 & 4 \\
+ \hline
+ 5 & -1 & 805 & 1 \\
+ \hline
+ -9 &  2 & 161 & 1 \\ 
+ \hline
+ 50 & -11  & 0 & 5 \\
+ \hline
+
+\end{tabular}
+\end{center}
+
+We can determine from the EEA table above that the d = gcd(1771, 8050) = $ r_5$ = 161. We know from LDET 1 that since 23 is not divisible by 161 (or d) does not divide 23, there will exists no integers x, y such that:
+\begin{align*}
+1771x + 8050y &= 23
+\end{align*}
+
+\textbf{Q01b} Before we begin we will replace $y$ and $-a$, such that the following is equivalent: 
+\begin{align*}
+1197x - 5145y + 42 & \equiv 1197x - 5145(-a) + 42\\
+& \equiv 1197x + 5145a + 42
+\end{align*}
+Now we willl apply the EEA to create the following table (using the x, a equation):
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ x & a & r & q \\ [0.5ex] 
+ \hline\hline
+ 0 & 1 & 5145 & 0 \\ 
+ \hline
+ 1 & 0 & 1197 & 0 \\
+ \hline
+ -4 & 1 & 357 & 4 \\
+ \hline
+ 13 & -3 & 126 & 3 \\
+ \hline
+ -30 &  7 & 105 & 2 \\ 
+ \hline
+ 43 & -10  & 21 & 1 \\
+ \hline
+ -245 & 57  & 0 & 5 \\
+ \hline
+\end{tabular}
+\end{center}
+
+We can determine from the EEA table above that the d = gcd(1771, 8050) = $ r_6$ = 21. We know from LDET 1 that since $21|-42$, integers solutions of x, a exist. The certificate of correctness we obtain from the EEA table is s = $x_6$ = 43 and t = $a_6$ = -10, such that:
+\begin{align*}
+x(s)+ a(t) & = 21\\
+1197 (43) + 5145 (-10) & = 21
+\end{align*}
+Since a = -y, we can convert this formula back into x,y form (s = $x_6$ = 43, t = $y_6$ = -$a_6$ = 10):
+\begin{align*}
+x(s) -  y(t) & = 21\\
+1197 (43) - 5145 (10)  &= 21
+\end{align*}
+Multiplying this by -2 we get:
+\begin{align*}
+1197 (-86) - 5145 (-20)  &= -42
+\end{align*}
+We also know from the LDET 2 that we can use the specific solution of $x_0$ = -86 and $y_0$ = -20 to get the set of all solutions:
+\[ \{ (x,y): x =  x_0 + \frac{t}{d}, y = y_0 - \frac{s}{d} \} \]
+\[ \{ (x,y): x =  -86 + 245n, y = -20 + 57n, n \in \mathbb{Z} \} \]
+
+
+\end{document}

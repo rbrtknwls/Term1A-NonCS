@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{MATH 135 Fall 2020: Written Assignment 7 (WA07)\\Due at 11:55 PM EST on Friday, November 13th, 2020\\Covers the contents of Lessons 6.7, 6.8, 7.1 and 7.2}
+
+\textbf{Q01.} (5 marks) For each of the following LDE's, either prove that there are no solutions, or find all possible solutions.
+
+\begin{enumerate}[(a)]
+\item (2 marks) $1771x + 8050y = 23$
+
+\item (3 marks) $1197x - 5145y = -42$
+\end{enumerate}
+
+\textbf{Q02.} (5 marks)
+
+\begin{enumerate}[(a)]
+\item (2 marks) Prove that the number of positive divisors of an integer $n > 1$ with unique prime factorization
+%
+$$
+n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}
+$$
+%
+is given by the product $(\alpha_1 + 1)(\alpha_2 + 1)\cdots (\alpha_k + 1)$.
+
+\item (3 marks) We say that a function $f(n)$ is \emph{multiplicative} if $f(mn) = f(m)f(n)$ for all coprime positive integers $m$ and $n$. Let $d(n)$ denote the number of positive divisors of $n$. Prove that $d(n)$ is multiplicative.
+\end{enumerate}
+
+\textbf{Q03.} (5 marks) Let $n$ be a positive integer. We say that a positive integer $k$ is a \emph{perfect $n$-th power} if there exists a positive integer $a$ such that $k = a^n$.
+
+Prove that for every positive integer $k$ and all \emph{coprime} positive integers $m$ and $n$, if $k$ is both a perfect $m$-th power and a perfect $n$-th power, then it is a perfect $(mn)$-th power.
+
+\textbf{Q04.} (5 marks) It is known that, for all integers $n$ and $k$ such that $1 \leq k \leq n$,
+%
+$$
+\left.\frac{n}{\gcd(n, k)} \mid \binom{n}{k}\right.
+$$
+%
+You may use this fact, without proof, in your solution.
+
+Let $n$ be a positive integer and let $s$ be the largest non-negative integer such that $2^s \mid n$. Prove that $2^s \mid \binom{n}{k}$ for every odd integer $k$ such that $1 \leq k \leq n$.
+
+\textbf{Q05.} (5 marks) Let $a$ and $b$ be positive integers. Let $c$ be an integer such that \mbox{$\gcd(a, b) \mid c$}. Prove that there exists a unique (integer) solution $(x', y')$ to the linear Diophantine equation $ax + by = c$ such that $0 \leq x' < \frac{b}{\gcd(a, b)}$.
+\end{document}
