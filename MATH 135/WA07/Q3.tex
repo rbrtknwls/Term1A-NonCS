@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+
+\textbf{Q03} Let $k$ be a perfect $n$th power and $m$th power (where both $m$ and $n$ are coprime), and let $a$ and $b$ both be arbitrary integers such that:
+\[   k = a^n= b^m  \] 
+We know from UFT that k can be represented in terms of its prime divisors ($p_i$) and their non-negitive exponents ($\alpha_i$), in other words the equation becomes (given g $\geq$ 1):
+\[   p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_g^{\alpha_g} = a^n = b^m \] 
+If we split this into two equations we find that :
+\begin{enumerate}
+\item $p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_g^{\alpha_g} = a^n$ and  $p_1^{\frac{\alpha_1}{n}}p_2^{\frac{\alpha_2}{n}}\cdots p_g^{\frac{\alpha_g}{n}} = a$
+\item $p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_g^{\alpha_g} = b^m$ and  $p_1^{\frac{\alpha_1}{m}}p_2^{\frac{\alpha_2}{m}}\cdots p_g^{\frac{\alpha_g}{m}} = b$
+\end{enumerate}
+Since a and b are integers, equations 1 and 2 shows us that for each $\alpha_i $ (where $0\leq i \leq g$):
+\[ n|\alpha_i  \text{ and } m|\alpha_i \]
+ We know that we can rewrite $\alpha_i$ as:
+\[  \alpha_i = (\frac{\alpha_i}{n})(n) \]
+Plugging in  $m|\alpha_i$ we get that:
+\[  m|\alpha_i = m|(\frac{\alpha_i}{n})(n) \]
+Notice that the $\gcd(m,(n)) = 1$, thus from CAD we know that $m|(\frac{\alpha_i}{n})$. The definition of divisibilty thus imples:
+\[  m|\frac{\alpha_i}{n} \implies \text{(for some integer h) } mh = \frac{\alpha_i}{n}  \implies mnh = \alpha_i \implies mn | \alpha_i  \]
+Since $mn | \alpha_i$, we also thus know that an integer c exists such that for every prime divisor:
+\[ p_i^{\frac{\alpha_i}{mn}} = c \]
+As this holds for every prime divisor ($p_i$) we know that an integer $d$ must exist such that:
+\[ p_1^{\frac{\alpha_1}{mn}}p_2^{\frac{\alpha_2}{mn}}\cdots p_k^{\frac{\alpha_g}{mn}} = d \]
+\[ p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_g} = d^{mn} \]
+Since this is the prime factor expansion of k, we can replace it with k to show that:
+\[ k = d^{mn} \]
+Therefore we have shown that a positive integer d exsits such that k = $ d^{mn}$ proving that if $k$ is a perfect $n$th and $m$th power then it is also a perfect $mn$th power
+\end{document}

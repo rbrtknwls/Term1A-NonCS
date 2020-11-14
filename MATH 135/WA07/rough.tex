@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate,mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand{\nlet}{%
+  \mathrel{\ooalign{$\leq$\cr\hidewidth$|$\hidewidth}}%
+}
+\newcommand{\nlst}{%
+  \mathrel{\ooalign{$<$\cr\hidewidth$|$\hidewidth}}%
+}
+\begin{document}
+
+\textbf{Q05}LDET 2 shows us that for a given a,b,c a $x_0$ exists such that:
+\[ x = x_0 + \frac{b}{d} * n \]
+
+We also know that x' is bounded by:
+\[ 0\leq x'< \frac{b}{d}\]
+\[ 0\leq x_0 + \frac{b}{d} * n < \frac{b}{d}\]
+if we divide by $\frac{b}{d}$, we get that
+\[ 0\leq \frac{(x_0)(d)}{b} + 1 * n < 1\]
+\[ -\frac{(x_0)(d)}{b} \leq   n < 1-\frac{(x_0)(d)}{b}\]
+We know that since $b$ is not zero (as $b$ is positive) this implies that $-\frac{(x_0)(d)}{b}$ is a real number $r$, plugging this in we find that:
+\[r \leq  n < 1+ r\]
+I will show that only one intenger n exists such that it is $n \in [r,r+1)$, by contradiction. Let the natural k represent the count of integers within the interval $[r,r+1)$:\\\\
+Assume that $k\geq2$. Since the smallest possible integer ($n_0$) that exists within the interval will always be $\ceil[\big]{r}$, we also know that the largest integer ($n_{k-1}$) will be equal to:
+\[ \text{largest integer = smallest integer + (amount of integers - 1)}\]
+\[ n_{k-1} = n_0 + (k - 1)\]
+We also know that since $k\geq2$ that:
+\[ n_0 + (k - 1) \geq n_0 + ((2) - 1) \]
+\[ n_0 + (k - 1) \geq n_0 + 1 \]
+Which thus implies:
+\[ n_{k-1} \geq n_0 + 1\]
+\[ n_{k-1} \geq \ceil[\big]{r} + 1\]
+Since $n_{k-1} \in [r,r+1)$ this means that it is bounded by:
+\[r \leq n_{k-1} < 1+ r\]
+\[r \leq \ceil[\big]{r} + 1 \leq n_{k-1} < 1+ r\]
+\[r \leq \ceil[\big]{r} + 1 < 1+ r\]
+Splitting this into two equations we get that:
+\begin{enumerate}
+\item $r \leq \ceil[\big]{r} + 1$
+\item $\ceil[\big]{r} + 1 < 1+ r$
+\end{enumerate}
+We know that (1) is correct, but notice that equation (2) goes to:
+\[\ceil[\big]{r} + 1 < 1+ r\]
+\[\ceil[\big]{r} < r\]
+This is a clear contradictoin as the $\ceil[\big]{r}$ is always greater then or equal to $r$. This contradiction happens whenever $k\geq2$.\\
+We know that since k is a natural number and $k \nlet 2$, that k must be 1. This means that there is only one possible n such that:
+\[ x' = x_0 + \frac{b}{d} * n \]
+and by extension from LDET 2:
+\[ y' = y_0 - \frac{a}{d} * n \]
+Therefore we have shown that for any positive $a$,$b$ and integer $c$ such that $\gcd(a,b)|c$ we have only one set of solutions x' and y' (which are therefore unqiue) such that:
+\[ ax'+ by' = c  \text{ and } x' < \frac{b}{\gcd(a,b)} \]
+
+\[ x_0 = \frac{(c- b(y_0))}{a}\]
+\[ x_0 = \frac{(c- b(y_0))}{a}\]
+\[ - x_0 = \frac{(c)gcd(a,b)}{ba}-  \frac{(y_0)gcd(a,b)}{a}\]
+
+\[ (a(x_0)+b(y_0) = c \]
+\[  b(y_0) = c - (a(x_0) \]
+
+
+\end{document}

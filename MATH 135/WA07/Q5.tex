@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate,mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\newcommand{\nlet}{%
+  \mathrel{\ooalign{$\leq$\cr\hidewidth$|$\hidewidth}}%
+}
+
+\begin{document}
+
+\textbf{Q05} Let $a$ and $b$ be a arbitrary positive integers and $c$ be an integer such that $\gcd(a,b)|c$, we thus know from definition that an integer $g$ exisits so:
+\[\gcd(a,b)g = c \]
+We know from LDET 1 that some integers $s$,$t$ exist such that:
+\[ as+bt = \gcd(a,b) \]
+Multiplying this all by $g$ we find that:
+\[ a(gs)+b(gt) = \gcd(a,b)g \]
+\[ a(gs)+b(gt) = c\]
+A pair of integers $x_0,y_0$ will exist such that $x_0 = gs$ and $y_0 = gt$ and:
+\[ a(x_0)+b(y_0) = c\]
+From LDET 2 it follows that the set of all possible solutions of $ax + by = c$ is given by (for every natural $h$):
+\[ x = x_0 + \frac{b}{\gcd(a,b)}h \text{ and }  y = y_0 - \frac{a}{\gcd(a,b)}h \]
+We know that a solution of $x$ (represented by $x'$) will be of the form:
+\[ x' = x_0 + \frac{b}{\gcd(a,b)}n \text{ (where n is some integer)} \]
+If we give the restriction that:
+\[ 0\leq x'< \frac{b}{\gcd(a,b)}\]
+It implies that:
+\[ 0\leq x_0 + \frac{b}{\gcd(a,b)}n< \frac{b}{\gcd(a,b)}\]
+If we divide all three sides by $\frac{b}{\gcd(a,b)}$ we get:
+\[ \frac{(0)(gcd(a,b))}{b}\leq \frac{(x_0)(gcd(a,b))}{b}+ \frac{(b)(\gcd(a,b))}{(\gcd(a,b))(b)}n< \frac{(b)(\gcd(a,b))}{(b)(\gcd(a,b))}\]
+\[ \frac{(0)}{b}\leq \frac{(x_0)(gcd(a,b))}{b}+ (1)n< (1)\]
+\[ 0 \leq \frac{(x_0)(gcd(a,b))}{b}+ n< 1\]
+\[ -\frac{(x_0)(gcd(a,b))}{b} \leq  n< 1 -\frac{(x_0)(gcd(a,b))}{b}\]
+We know that b is a positive number (non zero), which means that a real number r exists such that:
+\[ r = -\frac{(x_0)(gcd(a,b))}{b} \]
+Plugging this in we find that for some real number $r$, a integer $n$ exists such that:
+\[ -\frac{(x_0)(gcd(a,b))}{b} \leq  n< 1 -\frac{(x_0)(gcd(a,b))}{b}\]
+\[r \leq  n < 1+ r\]
+I will use proof by contradiction to show that only one integer $n$ exists such that $n \in [r,r+1)$. We know that at least one number exists within the interval as if we set n = $\ceil[\big]{r}$, we find that:
+\[r \leq \ceil[\big]{r} < 1+ r\]
+Which will always satisfy the equation, so we will let the natural $k$ represent the number of integers within the interval $[r,r+1)$:\\\\
+Assume that $k\geq2$. Since the smallest possible integer ($n_0$) that exists within the interval will always be $\ceil[\big]{r}$, we also know that the largest integer ($n_{k-1}$) will be equal to:
+\[ \text{largest integer = smallest integer + (amount of integers - 1)}\]
+\[ n_{k-1} = n_0 + (k - 1)\]
+We also know that since $k\geq2$ that:
+\[ n_0 + (k - 1) \geq n_0 + ((2) - 1) \]
+\[ n_0 + (k - 1) \geq n_0 + 1 \]
+Which thus implies:
+\[ n_{k-1} \geq n_0 + 1\]
+\[ n_{k-1} \geq \ceil[\big]{r} + 1\]
+Since $n_{k-1} \in [r,r+1)$ this means that it is bounded by:
+\[r \leq n_{k-1} < 1+ r\]
+\[r \leq \ceil[\big]{r} + 1 \leq n_{k-1} < 1+ r\]
+\[r \leq \ceil[\big]{r} + 1 < 1+ r\]
+Splitting this into two equations we get that:
+\begin{enumerate}
+\item $r \leq \ceil[\big]{r} + 1$
+\item $\ceil[\big]{r} + 1 < 1+ r$
+\end{enumerate}
+We know that (1) is correct, but notice that equation (2) simplifies to:
+\[\ceil[\big]{r} + 1 < 1+ r\]
+\[\ceil[\big]{r} < r\]
+Therefore whenever $k\geq2$ a contradiction will occour as the $\ceil[\big]{r}$ is can never be less then $r$.\\
+We know that since k is a natural number and $k \nlet 2$, so  k = 1. This means that there is only one possible n such that by LDET 2:
+\[ x' = x_0 + \frac{b}{d} * n \]
+\[ y' = y_0 - \frac{a}{d} * n \]
+Since there is only one possible integer value of  n and $x_0$, $y_0$  are integers and $\frac{b}{\gcd(a,b)}, \frac{a}{\gcd(a,b)}$ are also both integers it means that x' and y' are unique integer solutions that both:
+\[ ax'+ by' = c  \text{ and } x' < \frac{b}{\gcd(a,b)} \]
+For any positive integer $a$,$b$ and integer $c$ such that $\gcd(a,b)|c$ .
+\end{document}
