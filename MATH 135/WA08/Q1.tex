@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 135 Fall 2020: WA08}
+
+\textbf{Q01A} We will start by simplifying, we know that from CISR that:
+\begin{flalign*}
+7007x  \equiv 224x + 399(17) \equiv 224x \text{ (mod 399)} &&  \\
+-201   \equiv -201 + 399(1)  \equiv 189 \text{ (mod 399)}  
+\end{flalign*}
+Thus our equation will become:
+\[  224x \equiv 189 \text{ (mod 399)}  \]
+Applying EEA to the corrisponding linear Diaphantine equation $224x + 399y = 189$:
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ x & y & r & q \\ [0.5ex] 
+ \hline\hline
+ 0 & 1 & 399 & 0 \\ 
+ \hline
+ 1 & 0 & 224 & 0 \\
+ \hline
+ -1 & 1 & 175 & 1 \\
+ \hline
+ 2 & -1 & 49 & 1\\
+ \hline
+ -7 &  4 & 28 & 3 \\ 
+ \hline
+ 9 & -5  & 21 & 1 \\
+ \hline
+ -16 &  9 & 7 & 1 \\ 
+ \hline
+57 &  -32 & 0 & 3\\ 
+ \hline
+\end{tabular}
+\end{center}
+ LCT tells us that since d = gcd(7007,399) = 7 (from the certificate of correctness) and $7|189$, that there must be an integer x that satisfies the equation:
+\[  7007x \equiv -210 \text{ (mod 399)} \]
+We also know that when x = -16 that:
+\[  224(-16) \equiv -3584 + 399(9) \equiv 7 \text{ (mod 399)} \]
+Also notice that this will means 7007(-16) (mod 399) = 7 as well, so any solution of 224x (mod 399) will apply to 7007x (mod 399). Since 7(27) = 189 (mod 399), if we multiple both sides by 27 we get that:
+\[  224(-432) \equiv -96768 + 399(243) \equiv 7(27) \text{ (mod 399)} \]
+\[  224(-432) \equiv -96768 + 399(243) \equiv 189 \text{ (mod 399)} \]
+We know that the set of all solutions will be given by $ x = x_0 \text{ (mod 399)} $ where $x_0$ is a particular solution. Thus:
+\[  x \equiv -432 \text{ (mod 399)} \equiv -432 + 399(2) \equiv 366 \text{ (mod 399)} \]
+Therefore the set of solutions to the linear congruence are given by all integers x such that:
+\[  x \equiv 366 \text{ (mod 399)} \]
+
+\textbf{Q01B} Our equation is in its simpliest form (as each term its less then 8645), thus we will start by applying EEA to the corrisponding linear Diaphantine equation
+\[  1323x + 8645y = 1155 \]
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+ x & y & r & q \\ [0.5ex] 
+ \hline\hline
+ 0 & 1 & 8645 & 0 \\ 
+ \hline
+ 1 & 0 & 1323 & 0 \\
+ \hline
+ -6 & 1 & 707 & 6 \\
+ \hline
+ 7 & -1 & 616 & 1 \\
+ \hline
+ -13 &  2 & 91 & 1 \\ 
+ \hline
+ 85 & -13  & 70 & 6 \\
+ \hline
+ -98 &  15 & 21 & 1 \\ 
+ \hline
+379 &  -58 & 7 & 3\\ 
+ \hline
+-1235 & 189 & 0 & 3\\ 
+ \hline
+\end{tabular}
+\end{center}
+ LCT tells us that since d = gcd(1323,8645) = 7 (from the certificate of correctness) and $7|1155$, that there must be an integer x that satisfies the equation:
+\[  1323x \equiv 1155 \text{ (mod 8645)} \]
+We also know that when x = 379 that:
+\[  1323(379) \equiv 501417 - 8645(58) \equiv 7 \text{ (mod 8645)} \]
+Since 7(165) = 1155 (mod 8645), if we multiple both sides by 165 we get that:
+\[  224(62535) \equiv -96768(165) + 399(9570) \equiv 7(165) \text{ (mod 8645)} \]
+\[  224(62535) \equiv 1155 \text{ (mod 399)} \]
+We know that the set of all solutions will be given by $ x = x_0 \text{( mod 8645)} $ where $x_0$ is a particular solution. Thus:
+\[  x \equiv 62535 \text{ (mod 8645)} \equiv 2020 - 8645(7) \equiv 2020 \text{ (mod 8645)} \]
+Therefore the set of solutions to the linear congruence are given by all integers x such that:
+\[  x \equiv 2020 \text{ (mod 8645)} \]
+
+\end{document}
