@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+
+\textbf{Q03a} We will prove the results by using strong induction on $n$, where $P(n)$ is the statement:
+\[ a_{n+2} = 6a_{n} \]
+Base Case: When n is $0$, the statement $P(0)$ is given by:
+\[ x_2 \equiv 6x_0 \text{ (mod 19)} \]
+This is from definition and satifies the general equation, thus proving $P(0)$.
+When $n$ is 1, the statement $P(1)$ is given by:
+\[ x_3 \equiv 6x_1 \text{ (mod 19)} \]
+This is also from definition and satifies the general equation thus proving $P(1)$.
+When $n$ is 2, the statement $P(2)$ is given by:
+\begin{align*}
+x_4 & = x_3 + x_2 \text{ (mod 19)} \\
+& = (6x_1) + (6x_0) \text{ (mod 19)} \\
+& =  6(x_1 + x_0) \text{ (mod 19)} \\
+& =  6(x_2) \text{ (mod 19)} \\
+\end{align*}
+We have thus shown that when n is 2, it satifies the general equation thus proving $P(1)$.
+Inductive Hypothesis: Let $k$ be a positive integer such that ($k \geq  2$). Assume for all integers $i$ = 1,2,3,...,$k$,  $a_{i+2} = 6 a_{i}$.
+We wish to prove that when P(k+1), we will get:
+\[ x_{(k+3} = 6{k+1} \]
+We know that from our starting definition P(k+1):
+\begin{align*}
+x_{(k+1) + 2} & = x_{(k+1) + 2-1}  +x_{(k+1) + 2-2}  \text{ (mod 19)} \\
+x_{k+3} & = x_{k+2}  +x_{k+1} \text{ (mod 19)} \\
+\end{align*}
+From our Inductive Hypthoesis we assume P(k) and P(k-1) are true, this means also due to CAM that $a_{k+2} = 6a_k$
+& =  6(x_2) \text{ (mod 10)} \\
+\end{align*}
+\end{document}
