@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 137 Fall 2020: WA08}
+
+\textbf{Q01.} Let $c$ be an arbitrary real number such that ($c > 0$) This means that we start with the equation:
+\begin{align*}
+f\sqrt{x} +  \sqrt{y} & = \sqrt{c}\\
+ \sqrt{y} & = \sqrt{c}-\sqrt{x}\\
+y & = (\sqrt{c}-\sqrt{x})^2
+\end{align*}
+This also impliies that:
+\[ f(x) =  (\sqrt{c}-\sqrt{x})^2 \]
+If we take the implicit derivative of both sides we will find that:
+\begin{align*}
+\frac{d}{dx}y & =\frac{d}{dx} (\sqrt{c}-\sqrt{x})^2 \\
+\frac{dy}{dx} & =2(\sqrt{c}-\sqrt{x}) \times \frac{d}{dx} [\sqrt{c}-\sqrt{x}]\\
+\frac{dy}{dx} & =2(\sqrt{c}-\sqrt{x}) \times [\frac{d}{dx}  \sqrt{c}- \frac{d}{dx} \sqrt{x}]
+\end{align*}
+Notice that $c$ is a constant and $x$ is of the form $x^{(\frac{1}{2})}$ thus the derivative will become:
+\begin{align*}
+\frac{dy}{dx} & =2(\sqrt{c}-\sqrt{x}) \times [0 - \frac{1}{2}x^{\frac{-1}{2}}]\\
+\frac{dy}{dx} & =2(\sqrt{c}-\sqrt{x}) \times \frac{1}{-2x^\frac{1}{2}}\\
+\frac{dy}{dx} & =-\frac{\sqrt{c}-\sqrt{x}}{\sqrt{x}}
+\end{align*}
+This can also be rewritten as:
+\[ f'(x) = -\frac{\sqrt{c}-\sqrt{x}}{\sqrt{x}} \]
+Let $x_0$ and $y_0$ be an arbitrary solution to $\sqrt{x} +  \sqrt{y} = \sqrt{c}$, therefore a tangent line will exist that goes through ($x_0$, $y_0$). We can thus apply the Linear Approximation at $x=a$, and we get:
+\[ L_a(x) = f(a) + f'(a)(x-a) \]
+The next step we will split into two parts, finding the $y$ intercept and finding the $x$ intercept. Starting with the first we know that at the $y$ intercept the value of $x$ will be zero, thus our equation becomes:
+\begin{align*}
+ L_a(x) & = f(a) + f'(a)(x-a)\\
+ L_a(0) & = f(a) + f'(a)(0-a)\\
+ & =(\sqrt{c}-\sqrt{a})^2 +f'(a)(-a)\\
+ & =(\sqrt{c}-\sqrt{a})^2 - \frac{\sqrt{c}-\sqrt{a}}{\sqrt{a}}(-a)\\
+ & =(\sqrt{c}^2 - 2\sqrt{a}\sqrt{c} + \sqrt{a}^2) - (-\sqrt{c}\sqrt{a}+\sqrt{a}\sqrt{a})\\
+ & = c - 2\sqrt{a}\sqrt{c} + a +\sqrt{c}\sqrt{a} - a\\
+ & = c - \sqrt{a}\sqrt{c}\\
+\end{align*}
+Our $x$ intercept will happen when $y = 0$, in other terms this is equivilent to $L_a(x) = 0$. This means our equation will become:
+\begin{align*}
+ L_a(x) & = f(a) + f'(a)(x-a)\\
+0 & = f(a) + f'(a)(x-a)\\
+ & = f(a) + f'(a)(x-a)\\
+& = \frac{f(a)}{f'(a)} + (x - a)\\ 
+& = \frac{(\sqrt{c}-\sqrt{a})^2 }{ -\frac{\sqrt{c}-\sqrt{a}}{\sqrt{a}}} + (x - a)\\
+& = -\frac{\sqrt{a}(\sqrt{c}-\sqrt{a})^2}{\sqrt{c}-\sqrt{a}} + (x - a) \\
+& = -\sqrt{a}(\sqrt{c}-\sqrt{a})) + (x - a) \\
+& = -\sqrt{a}\sqrt{c} +\sqrt(a)\sqrt{a} + x - a \\
+\sqrt{a}\sqrt{c} & =   x  
+\end{align*}
+Since $x$ is the $x$ intercept and $L_a(0)$ is the $y$ intercept, the sum of the two will equal:
+\begin{align*}
+= & L_a(0)  + x\\
+= &  \text{ c} - \sqrt{a}\sqrt{c} +\sqrt{a}\sqrt{c} \\
+= & \text{ c} 
+\end{align*}
+Thus showing that the $x$ and $y$ intercepts of the tangent will sum up to $c$.
+\end{document}
