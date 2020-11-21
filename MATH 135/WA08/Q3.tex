@@ -18,28 +18,72 @@
 \textbf{Q03a} We will prove the results by using strong induction on $n$, where $P(n)$ is the statement:
 \[ a_{n+2} = 6a_{n} \]
 Base Case: When n is $0$, the statement $P(0)$ is given by:
-\[ x_2 \equiv 6x_0 \text{ (mod 19)} \]
+\[ a_2 \equiv 6a_0 \text{ (mod 19)} \]
 This is from definition and satifies the general equation, thus proving $P(0)$.
 When $n$ is 1, the statement $P(1)$ is given by:
-\[ x_3 \equiv 6x_1 \text{ (mod 19)} \]
+\[ a_3 \equiv 6a_1 \text{ (mod 19)} \]
 This is also from definition and satifies the general equation thus proving $P(1)$.
 When $n$ is 2, the statement $P(2)$ is given by:
 \begin{align*}
-x_4 & = x_3 + x_2 \text{ (mod 19)} \\
-& = (6x_1) + (6x_0) \text{ (mod 19)} \\
-& =  6(x_1 + x_0) \text{ (mod 19)} \\
-& =  6(x_2) \text{ (mod 19)} \\
+a_4 & = a_3 + a_2 \text{ (mod 19)} \\
+& = (6a_1) + (6a_0) \text{ (mod 19)} \\
+& =  6(a_1 + a_0) \text{ (mod 19)} \\
+& =  6(a_2) \text{ (mod 19)} \\
 \end{align*}
 We have thus shown that when n is 2, it satifies the general equation thus proving $P(1)$.
 Inductive Hypothesis: Let $k$ be a positive integer such that ($k \geq  2$). Assume for all integers $i$ = 1,2,3,...,$k$,  $a_{i+2} = 6 a_{i}$.
 We wish to prove that when P(k+1), we will get:
-\[ x_{(k+3} = 6{k+1} \]
+\[ a_{k+3} = a_{k+1} \text{ (mod 19)} \]
 We know that from our starting definition P(k+1):
 \begin{align*}
-x_{(k+1) + 2} & = x_{(k+1) + 2-1}  +x_{(k+1) + 2-2}  \text{ (mod 19)} \\
-x_{k+3} & = x_{k+2}  +x_{k+1} \text{ (mod 19)} \\
+a_{(k+1) + 2} & = a_{(k+1) + 2-1}  ax_{(k+1) + 2-2}  \text{ (mod 19)} \\
+a_{k+3} & = a_{k+2}  +a_{k+1} \text{ (mod 19)} \\
 \end{align*}
-From our Inductive Hypthoesis we assume P(k) and P(k-1) are true, this means also due to CAM that $a_{k+2} = 6a_k$
-& =  6(x_2) \text{ (mod 10)} \\
+From our Inductive Hypthoesis we assume P(k) and P(k-1) are true, this means also that $a_{k+2} = 6a_k$ (P(k)) and $a_{k+1} = 6a_k$ (P(k-1)) hold and are true. Thus our equation becomes (thanks to CAM):
+\begin{align*}
+a_{k+3} &= a_{k+2}  +a_{k+1} \text{ (mod 19)} \\ 
+ &= 6a_{k}  +6a_{k-1} \text{ (mod 19)} \\ 
+ &= 6(a_{k}+a_{k-1)} \text{ (mod 19)} \\
+&= 6a_{k+1} \text{ (mod 19)} 
 \end{align*}
+Thus since both the base case and inductive step hold, it follows by the Principle of Strong Mathematical Induction (POSI) that the statement it true.\\\\\\\\\\\\\
+\textbf{Q03b} We know from the fundimental definition given in the question that:
+\begin{align*}
+a_{3} &= a_{2}  +a_{1} \text{ (mod 19)} \\ 
+ &= 6a_0  +a_{1} \text{ (mod 19)} 
+\end{align*}
+However we also know that:
+\[ a_{3}= 6a_{1} \text{ (mod 19)} \]
+So combining the two we find that:
+\[ 6a_{1} \text{ (mod 19)}  = 6a_0 - a_1 \text{ (mod 19)} \]
+\[ 0 = 6a_0 - 5a_1 \text{ (mod 19)} \]
+All the possible interger combinations are given by the table:
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+$a_0$ & $a_1$ & r & r (mod 19) \\ [0.5ex] 
+ \hline\hline
+ 0 & 0 & 0 & 0 \\ 
+ \hline
+ 1 & 5 & -19 & 0 \\
+ \hline
+ 2 & 10 & -38 & 0 \\
+ \hline
+ 3 & -15 & -57 & 0\\
+ \hline
+ 5 &  6 & 0 & 0 \\ 
+ \hline
+ 7 & 16  & -38 & 0 \\
+ \hline
+ 11 & 17 & -19 & 0 \\ 
+ \hline
+13 & 8 & 38 & 0\\ 
+ \hline
+17 &  9 & 57 & 0\\ 
+ \hline
+\end{tabular}
+\end{center}
+Notice that any composite number can be created by multiplying $a_0$ and $a_1$ by some integer but the $r$ (mod 19) will still be zero. Therefore all the prime and composite numbers are in the solution set so therefore their are 19 integer pairs which act as the solution
+
 \end{document}
