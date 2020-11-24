@@ -6,4 +6,6 @@ plot(CSI, main = "Co2 Emmissions Quaterly (Detrended)", ylab = "Co2 (ppm)", lwd 
 
 lines(St, col = 2, lty = 2, lwd = 2)
 
+grid(nx = 10)
+
 plot(Sumtemp, Wintemp, pch = 21, bg = 2, xy.labels = FALSE, xy.lines = FALSE, main = "Winter Anomalies versus Summer Anomalies", xlab = "Temp (0.1 C)", ylab = "Temp (0.1 C")
