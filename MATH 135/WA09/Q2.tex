@@ -14,50 +14,29 @@
 \begin{document}
 \parindent=0pt
 
-\textbf{Q02A} If our we set [a] to be [7] our system of equations and multiply the first equation by 5 and the second by 3 we get:
+\textbf{Q02A} If our we set [a] to be [7] our system of equations for $\mathbb Z_12$ and multiply the first equation by 5 and the second by 3 we get:
 $$
 \begin{cases}
-[35][x] + [15][y] & = [5]       (1)\\
-[6][x] + [15][y] & = [-3]      (2)
+[35][x] + [15][y] & \equiv [5]       (1)\\
+[6][x] + [15][y] & \equiv [-3]      (2)
 \end{cases}
 $$
 Subtracting equation (1) by equation (2) we will get the new equation: [29][y] = [8]. Note that [29] = [5] our equation will become:
-\[ [5][x] = [8] \]
+\[ [5][x] \equiv [8] \]
 We know that [5] and 12 are co-prime, and thus by INV (with integers) we know that [5] will have a mathimatical inverse, thus if we multiply both sides we will get:
-\[ [5]^{-1}[5][y] = [8][5]^{-1} \]
+\[ [5]^{-1}[5][y] \equiv [8][5]^{-1} \]
 By definition $[5]^{-1}[5] = 1$ and we know that [5][5] = [1] (mod 12) and thus the mathimatical inverse of [5] is [5]. Our equation thus becomes:
-\[ [x] = [40] = [4] \]
+\[ [x] \equiv [40] \equiv [4] \]
 Plugging this into equation (2) we get that:
 \begin{align*}
- [6][x] + [15][y] & = [-3]  \\
- [15][y]  & = [-3]  - [6][4] \\
- [3][y]  & = [-3]  - [0] \\
- [3][y]  & = [9]]\\
+ [6][x] + [15][y] & \equiv [-3]  \\
+ [15][y]  & \equiv [-3]  - [6][4] \\
+ [3][y]  & \equiv [-3]  - [0] \\
+ [3][y]  & \equiv [9]\\
 \end{align*}
-We know this condition will be satisfied if [y] = [3] and thus our solution is: [x] = [4] and [y] = [3]
+SFKMASKF
+We know this condition will be satisfied if [y] = [3] and thus our solution set is given by: [x] = [4] and [y] = [3].
 
 
-\textbf{Q01B} Visually we know that $\mathbb Z_7$ is a field, if we look at the multiplication table, each possible congruence class [a] has a corrisponding congruence class $[b]^{-1}$ such that:
-
-\[ [a][b] = 1 \]
-
-This happens because 7 is a prime and [a] is co-prime to 7. This means that $ d = \gcd([a],7]) = 1$ and by definition of MAT since $d|1$ there must be a solution [b] for each [a] that solves the above equality (which means [a] will have a multiplictive inverse).\\\\
-On the other hand 8 is not prime and thus not all [a]'s are co-prime to 8. If [a] is not coprime to 7 this would result in $d = \gcd([a],8] \neq 1$ and thus MAT could not apply as $d\nmid1$, which means for all [b] of that a:
-
-\[ [a][b] \neq 1 \]
-
-Which means that [a] has no multiplicitive inverse. As an illistutive example lets consider [a] = [2] the multiplictive table will give us:
-
-\begin{center}
- \begin{tabular}{||c | | c c c c c c c c||} 
- \hline
-    $\cdot$ & [0] & [1] & [2] & [3] & [4] & [5] & [6] & [7]\\ 
- \hline
-\hline
-\text{[2]} & [0] & [2] & [4] & [6] & [0] & [2] & [4] & [6] \\ 
-\hline
-\end{tabular}
-\end{center}
-
-We can thus see that [1] is never a result and thus [a] will never have a multiplictive inverse.
+\textbf{Q02B} ...
 \end{document}
