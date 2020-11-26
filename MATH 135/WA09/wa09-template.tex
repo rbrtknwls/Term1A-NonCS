@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate,mathtools}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{MATH 135 Fall 2020: Written Assignment 9 (WA09)\\Due at 11:55 PM EST on Friday, November 27th, 2020\\Covers the contents of Lessons 8.6, 8.7, 8.8 and 8.9}
+
+\textbf{Q01.} (4 marks)
+
+\begin{enumerate}[(a)]
+\item (2 marks) Build addition and multiplication tables for $\mathbb Z_7$.
+
+\item (2 marks) Let $m > 1$ be an integer. We say that $\mathbb Z_m$ is a \emph{field} if for every non-zero $[a]$ in $\mathbb Z_m$, $[a]^{-1}$ exists. Is $\mathbb Z_7$ a field? Is $\mathbb Z_8$ a field? Make sure to justify your answers.
+\end{enumerate}
+
+\textbf{Q02.} (5 marks) Let $[a] \in \mathbb Z_{12}$. Consider the following system of equations in $\mathbb Z_{12}$:
+%
+$$
+\begin{cases}
+[a][x] + [3][y] & = [1]\\
+[2][x] + [5][y] & = [-1]
+\end{cases}
+$$
+
+\begin{enumerate}[(a)]
+\item (2 marks) Solve the above system of equations in $\mathbb Z_{12}$ in the case when $[a] = [7]$.
+
+\item (2 marks) Determine, with proof, all congruence classes $[a]$ such that the above system of equations has exactly $2$ solutions $\left([x], [y]\right)$ in $\mathbb Z_{12}$.
+
+\item (1 mark) Prove or disprove: there exists a congruence class $[a]$ in $\mathbb Z_{12}$ such that the above system of equations has exactly $6$ solutions $\left([x], [y]\right)$ in $\mathbb Z_{12}$.
+\end{enumerate}
+
+\textbf{Q03.} (5 marks) Find all integers $x$ such that \mbox{$x^2 + 5145x + 2332 \equiv 0 \pmod{9797}$}. Make sure to justify your answer.
+
+\textbf{Q04.} (5 marks) Let $a$ be an integer and let $n$ be a positive integer.
+
+\begin{enumerate}[(a)]
+\item (3 marks) Prove that if \mbox{$a^{2^{n - 1}} \not \equiv 1$} \mbox{(mod $2^n$)}, then $a$ is even.
+
+\item (2 marks) Prove that for any odd prime $p$, if $a$ is odd and $a^{2^{n - 1}(p - 1)} \not \equiv 1$ \mbox{(mod $2^np$)}, then $p \mid a$.
+\end{enumerate}
+
+\textbf{Q05.} (5 marks) Let $p_1$ and $p_2$ be distinct odd primes. Let $m = p_1p_2$.
+
+\begin{enumerate}[(a)]
+\item (4 marks) Prove that if $(p_1 - 1) \mid (p_2 - 1)$, then the equation $[x]^{p_2} + [x] - [1] = [0]$ has a unique solution in $\mathbb Z_m$.
+
+\item (1 mark) Determine an integer $x_0$, with $0 \leq x_0 < m$, such that $[x_0]^{p_2} + [x_0] - [1] = [0]$ in $\mathbb Z_m$.
+
+\textbf{Note:} Your value of $x_0$ will depend on the value of $m$.
+\end{enumerate}
+\end{document}

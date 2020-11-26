@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 135 Fall 2020: WA09}
+
+\textbf{Q01A} We know that the possible congruence classes [a] of $\mathbb Z_7$ are:
+
+\[ [a] = [0], [1], [2], [3], [4], [5], [6] \]
+
+These congruence classes would have the following addition table:
+
+\begin{center}
+ \begin{tabular}{||c | | c c c c c c c||} 
+ \hline
+             + & [0] & [1] & [2] & [3] & [4] & [5] & [6]\\ 
+ \hline
+\hline
+\text{[0]} & [0] & [1] & [2] & [3] & [4] & [5] & [6] \\ 
+\text{[1]} & [1] & [2] & [3] & [4] & [5] & [6] & [0] \\ 
+\text{[2]} & [2] & [3] & [4] & [5] & [6] & [0] & [1] \\ 
+\text{[3]} & [3] & [4] & [5] & [6] & [0] & [1] & [2] \\ 
+\text{[4]} & [4] & [5] & [6] & [0] & [1] & [2] & [3] \\ 
+\text{[5]} & [5] & [6] & [0] & [1] & [2] & [3] & [4] \\ 
+\text{[6]} & [6] & [0] & [1] & [2] & [3] & [4] & [5] \\ 
+\hline
+\end{tabular}
+\end{center}
+
+They would also have the following multiplication tables:
+
+\begin{center}
+ \begin{tabular}{||c | | c c c c c c c||} 
+ \hline
+    $\cdot$ & [0] & [1] & [2] & [3] & [4] & [5] & [6]\\ 
+ \hline
+\hline
+\text{[0]} & [0] & [0] & [0] & [0] & [0] & [0] & [0] \\ 
+\text{[1]} & [0] & [1] & [2] & [3] & [4] & [5] & [6] \\ 
+\text{[2]} & [0] & [2] & [4] & [6] & [1] & [3] & [5] \\ 
+\text{[3]} & [0] & [3] & [6] & [2] & [5] & [1] & [4] \\
+\text{[4]} & [0] & [4] & [1] & [5] & [1] & [5] & [2] \\ 
+\text{[5]} & [0] & [5] & [3] & [1] & [5] & [1] & [2] \\ 
+\text{[6]} & [0] & [6] & [5] & [4] & [2] & [2] & [1] \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Q01B} Visually we know that $\mathbb Z_7$ is a field, if we look at the multiplication table, each possible congruence class [a] has a corrisponding congruence class $[b]^{-1}$ such that:
+
+\[ [a][b] = 1 \]
+
+This happens because 7 is a prime and [a] is co-prime to 7. This means that $ d = \gcd([a],7]) = 1$ and by definition of MAT since $d|1$ there must be a solution [b] for each [a] that solves the above equality (which means [a] will have a multiplictive inverse).\\\\
+On the other hand 8 is not prime and thus not all [a]'s are co-prime to 8. If [a] is not coprime to 7 this would result in $d = \gcd([a],8] \neq 1$ and thus MAT could not apply as $d\nmid1$, which means for all [b] of that a:
+
+\[ [a][b] \neq 1 \]
+
+Which means that [a] has no multiplicitive inverse. As an illistutive example lets consider [a] = [2] the multiplictive table will give us:
+
+\begin{center}
+ \begin{tabular}{||c | | c c c c c c c c||} 
+ \hline
+    $\cdot$ & [0] & [1] & [2] & [3] & [4] & [5] & [6] & [7]\\ 
+ \hline
+\hline
+\text{[2]} & [0] & [2] & [4] & [6] & [0] & [2] & [4] & [6] \\ 
+\hline
+\end{tabular}
+\end{center}
+
+We can thus see that [1] is never a result and thus [a] will never have a multiplictive inverse.
+\end{document}
