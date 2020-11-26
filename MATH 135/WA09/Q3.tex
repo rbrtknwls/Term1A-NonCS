@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q03} Let $x$ be an integer, we know that 9797 can be expressed in prime factors:
+\[ 9797 = 97^{1} \cdot 101^{1} \]
+These prime factors are co-prime to each other ($\gcd(97,101) =1$), thus we can apply CRT to the origonal equation. In other words an $x$ value will solve the origonal equation if that same $x$ solves both:
+$$
+\begin{cases}
+x^2 + 5145x + 2332 & \equiv 0 \text{  (mod 97)} \\
+x^2+ 5145x + 2332 & \equiv 0        \text{  (mod 101)}
+\end{cases}
+$$
+Simplifying into congruence classes our two equations become:
+$$
+\begin{cases}
+[x^2] + [4][x] + [4] & \equiv 0 \text{  (mod 97)} \\
+[x^2] + [95][x] + [9] & \equiv 0        \text{  (mod 101)}
+\end{cases}
+$$
+If we take the equation for the (mod 97) equation we know that it can be simplifed to:
+\[ [x^2] + [4][x] + [4] \equiv 0 \text{  (mod 97)}  \implies ([x] + [2])([x] + 2)  \equiv 0 \text{  (mod 97)} \]
+Thus we know that the only possible x solution would be of the form:
+\[ [x] \equiv - [2]  \equiv [-2]  \equiv [95]  \text{  (mod 97)} \]
+We can thus rewrite $x$ as:
+\[ x = 95 + 97n  \text {  (for some n $\in \mathbb{Z}$)} \]
+If we substitute x for this in the (mod 101) and simplify we get:
+\begin{align*}
+  x^2+ [95]x + [9] & \equiv 0        \text{  (mod 101)} \\
+ (95 + 97n)(95 + 97n) + 95(95 + 97n) + [9] & \equiv 0   \text{  (mod 101)} \\
+9025 + 18430n + 9409n^2 + 9025 + 9215n + [9] & \equiv 0   \text{  (mod 101)} \\
+[16]n^2 + [72]n + [81] & \equiv 0   \text{  (mod 101)} 
+\end{align*}
+We notice that the final equation can be rewritten as:
+\[ ([4][n] + [9])([4][n] + [9]) = 0 \]
+This would imply that:
+\[ [4][n] \equiv - [9] \equiv [92]  \text{  (mod 101)} \]
+Before we contuine we will solve for the multiplictive inverse of [4], we know that:
+\[ [4][4]^{-1} = [1]  \text{  (mod 101)}  \]
+We also know that:
+\begin{align*}
+  [4][76] \equiv 304 \text{  (mod 101)} \\
+  [4][76] \equiv [1] \text{  (mod 101)} 
+\end{align*}
+Thus we know the multiplictive inverse of [4] is [76]. if we multiple both sides by the multiplictive inverse we get:
+\begin{align*}
+  [4][n] & \equiv [92]  \text{  (mod 101)} \\
+  [4]^{-1}[4][n] & \equiv [92][4]^{-1}  \text{  (mod 101)} \\
+  [n]  & \equiv [92][76]  \text{  (mod 101)} \\
+  [n] & \equiv [23]   \text{  (mod 101)} \\
+\end{align*}
+We can thus rewrite $n$ as:
+\[ n \equiv 23 + 97z  \text {  (for some z $\in \mathbb{Z}$)} \]
+We now have two equatoins for x and n:
+$$
+\begin{cases}
+ n \equiv 23 + 101z\\
+ x \equiv 95 + 97n
+\end{cases}
+$$
+Thus by CTR the solution to solution of the origonal equatoin will be of the form:
+\begin{align*}
+   x & \equiv [95] + [97][n] \text{  (mod 9797)}  \\
+   x & \equiv  [95] + [97]([23]+ [101][z]\text{  (mod 9797)}  \\
+   x & \equiv  [95] + [2231]+ [9797][z]\text{  (mod 9797)}  \\
+   x & \equiv  [95] + [2231]+ [0][z]\text{  (mod 9797)}  \\
+   x & \equiv  [2326] \text{  (mod 9797)}  \\
+\end{align*}
+Since we know that $x_0$ is a particlar solution to our congruence, we know that by LCT the set of all solutions will be given by:
+\[  \{ x \in \mathbb{Z} : x \equiv 2326 \text{  (mod 9797)} \} \]
+
+\end{document}
