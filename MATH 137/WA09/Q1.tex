@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 137 Fall 2020: WA09}
+
+\textbf{Q01A} let $f$ be a differentiable function such that $L \neq 0$ and that $\displaystyle{\lim_{x \to \infty}} f'(x)$ exists. We know that we can multiple any given number by 1:
+\[ f(x) \equiv f(x) \cdot 1 \equiv f(x) \cdot \frac{e^x}{e^x}  \equiv \frac{f(x)e^x}{e^x} \]
+Thus we can say:
+\[ f(x)  \equiv \frac{f(x)e^x}{e^x} \]
+If we try to solve for the limit as $x$ approaches infinity: 
+\begin{align*}
+ \lim_{x \to \infty} f(x) \equiv & \lim_{x \to \infty} \frac{f(x)e^x}{e^x}  \\
+                                     \equiv &   \text{ } \frac{\displaystyle{\lim_{x \to \infty}} (f(x)e^x)}{\displaystyle{\lim_{x \to \infty}} e^x}   
+\end{align*}
+In order to simplify we will let:
+\[   \frac{\displaystyle{\lim_{x \to \infty}} (f(x)e^x)}{\displaystyle{\lim_{x \to \infty}} e^x}  \equiv  \text{ } \frac{\displaystyle{\lim_{x \to \infty}} g(x)}{\displaystyle{\lim_{x \to \infty}} z(x)}\]
+We know that  $\displaystyle{\lim_{x \to \infty}} g(x)$ will become:
+\begin{align*} 
+ \displaystyle{\lim_{x \to \infty}} g(x) \equiv & \displaystyle{\lim_{x \to \infty}} (f(x)e^x) \\
+                                                             \equiv & (\displaystyle{\lim_{x \to \infty}} f(x)) (\displaystyle{\lim_{x \to \infty}} e^x) \\
+                                                             \equiv & L \cdot e^\infty \\
+                                                             \equiv & L \cdot \infty \\
+\end{align*}
+We know that L is non-zero, thus we know that $L \cdot \infty$ is not indefinite, this would imply that $L \cdot \infty \equiv \infty$. Which means that $\displaystyle{\lim_{x \to \infty}} g(x)$ is equivalent to:
+\[ \displaystyle{\lim_{x \to \infty}} g(x) \equiv L \cdot \infty \equiv \infty \]
+If we move to $\displaystyle{\lim_{x \to \infty}} z(x)$ we know it will become:
+\begin{align*} 
+ \displaystyle{\lim_{x \to \infty}} z(x) \equiv & \displaystyle{\lim_{x \to \infty}} e^x \\
+                                                             \equiv & L \cdot e^\infty \\
+                                                             \equiv & L \cdot \infty \\
+\end{align*}
+Thus we know that $ \displaystyle{\lim_{x \to \infty}} \frac{g(x)}{z(x)}$ will be equivalent to $\frac{\infty}{\infty}$. We also know that the derivative of g(x) and z(x) is:
+$$
+\begin{cases}
+g'(x) \equiv \frac{dy}{dx}(f(x)e^x) \equiv e^xf(x) + f'(x)e^x\\
+z'(x) \equiv\frac{dy}{dx}(e^x) \equiv e^x
+\end{cases}
+$$
+We thus know that since g'(x) and z'(x) exist and $ \displaystyle{\lim_{x \to \infty}} \frac{g(x)}{z(x)} = \frac{\infty}{\infty}$, that we can apply L’Hopital’s Rule, such that:
+\begin{align*} 
+  \lim_{x \to \infty} f(x) \equiv & \lim_{x \to \infty} \frac{g(x)}{z(x)} \equiv \lim_{x \to \infty} \frac{g'(x)}{z'(x)}   \\
+                                      \equiv & \lim_{x \to \infty} \frac{e^xf(x) + f'(x)e^x}{e^x}\\
+                                      \equiv & \lim_{x \to \infty} (f(x) + f'(x))\\
+\end{align*}
+If we rearrange we get that:
+\begin{align*} 
+  \lim_{x \to \infty} f'(x) \equiv & \lim_{x \to \infty} (f(x) - f(x))\\
+                                       \equiv &  (L - L)\\
+                                       \equiv & 0\\
+\end{align*}
+This thus proves the hypothesis using L’Hopital’s Rule.
+
+\textbf{Q01B} We know that $f$ is differentiable everywhere and as a result must also be continous everwhere. For any given $x \in \mathbb{R}$ we can define the interval:
+\[ (x, x+1) \]
+MVT thus tells us that a $c$ ($c \in \mathbb{R}$) which is bounded by $x < c < x+1$  will also exist such that:
+\[ f'(c) \equiv \frac{f(x+1) - f(x)}{x+1 - x}\]
+Simplfying we find that:
+\begin{align*} 
+ f'(c) \equiv & \frac{f(x+1) - f(x)}{x+1 - x} \\
+        \equiv & \frac{f(x+1) - f(x)}{x- x + 1} \\
+        \equiv & f(x+1) - f(x)
+\end{align*}
+We know that the conditions are satisfied to use the linear approximation on f(x + 1) as we know its differentible at (x+1):
+\[ f'(c) \equiv f(x) + f'(x)(x+1-x) - f(x) \]
+\[f'(c) \equiv f'(x)\]
+Thus we subsitute f'(x) for f'(c) and so our original equation becomes:
+\[ f'(x) \equiv f(x+1) - f(x) \]
+If we let x approach inifinty we get that:
+\[ \displaystyle{\lim_{x \to \infty}} f'(x) \equiv \displaystyle{\lim_{x \to \infty}} f(x+1) - \displaystyle{\lim_{x \to \infty}} f(x) \]
+\[ \displaystyle{\lim_{x \to \infty}} f'(x) \equiv  f(\infty+1) -  f(\infty) \]
+\[ \displaystyle{\lim_{x \to \infty}} f'(x) \equiv  f(\infty) -  L \]
+\[ \displaystyle{\lim_{x \to \infty}} f'(x) \equiv  L -  L \]
+\[ \displaystyle{\lim_{x \to \infty}} f'(x) \equiv  0 \]
+This thus proves the hypothesis using MVT.
+\end{document}
