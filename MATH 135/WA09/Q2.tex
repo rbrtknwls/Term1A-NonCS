@@ -14,7 +14,7 @@
 \begin{document}
 \parindent=0pt
 
-\textbf{Q02A} If our we set [a] to be [7] our system of equations for $\mathbb Z_12$ and multiply the first equation by 5 and the second by 3 we get:
+\textbf{Q02A} If our we set [a] to be [7] our system of equations for $\mathbb Z_{12}$ and multiply the first equation by 5 and the second by 3 we get:
 $$
 \begin{cases}
 [35][x] + [15][y] & \equiv [5]       (1)\\
@@ -32,11 +32,25 @@ Plugging this into equation (2) we get that:
  [6][x] + [15][y] & \equiv [-3]  \\
  [15][y]  & \equiv [-3]  - [6][4] \\
  [3][y]  & \equiv [-3]  - [0] \\
- [3][y]  & \equiv [9]\\
+ [3][y]  & \equiv [9]
 \end{align*}
-SFKMASKF
-We know this condition will be satisfied if [y] = [3] and thus our solution set is given by: [x] = [4] and [y] = [3].
+We know this condition will be satisfied if [y] = [3] and thus our solution set is given by both: 
+\[  \{ x \in \mathbb{Z} : x \equiv 4 \text{  (mod 12)} \} \]
+\[  \{ y \in \mathbb{Z} : y \equiv 3 \text{  (mod 12)} \} \]
 
-
-\textbf{Q02B} ...
+\textbf{Q02B} To start we will mutliply the first equation by 5 and the second by 3 so we will get:
+$$
+\begin{cases}
+[3][a][x] + [15][y] & \equiv [5]       (1)\\
+[6][x] + [15][y] & \equiv [-3]        (2)
+\end{cases}
+$$
+substracting equation (1) by equation (2) we will get the new equation:
+\begin{align*}
+ [3][a][x] - [6][x] & \equiv [8] \\
+ [3][x]([a] - [2]) & \equiv [8] \\
+\end{align*}
+Let [b] = [a] - [2]:
+\[  [3][x]([b]) \equiv [8] \]
+We know that the multiplictive inverse of [3] in $\mathbb Z_{12}$ is:
 \end{document}
