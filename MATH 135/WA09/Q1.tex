@@ -51,23 +51,23 @@ They would also have the following multiplication tables:
 \text{[1]} & [0] & [1] & [2] & [3] & [4] & [5] & [6] \\ 
 \text{[2]} & [0] & [2] & [4] & [6] & [1] & [3] & [5] \\ 
 \text{[3]} & [0] & [3] & [6] & [2] & [5] & [1] & [4] \\
-\text{[4]} & [0] & [4] & [1] & [5] & [1] & [5] & [2] \\ 
-\text{[5]} & [0] & [5] & [3] & [1] & [5] & [1] & [2] \\ 
-\text{[6]} & [0] & [6] & [5] & [4] & [2] & [2] & [1] \\ 
+\text{[4]} & [0] & [4] & [1] & [5] & [2] & [6] & [3] \\ 
+\text{[5]} & [0] & [5] & [3] & [1] & [6] & [4] & [2] \\ 
+\text{[6]} & [0] & [6] & [5] & [4] & [3] & [2] & [1] \\ 
 \hline
 \end{tabular}
 \end{center}
 
-\textbf{Q01B} Visually we know that $\mathbb Z_7$ is a field, if we look at the multiplication table, each possible congruence class [a] has a corrisponding congruence class $[b]^{-1}$ such that:
+\textbf{Q01B} Visually we know that $\mathbb Z_7$ is a field, if we look at the multiplication table, each possible congruence class [a] has a corresponding congruence class $[b]^{-1}$ such that:
 
 \[ [a][b]  \equiv 1 \]
 
-This happens because 7 is a prime and [a] is co-prime to 7. This means that $ d = \gcd([a],7]) = 1$ and by definition of MAT since $d|1$ there must be a solution [b] for each [a] that solves the above equality (which means [a] will have a multiplictive inverse).\\\\
-On the other hand if we take $\mathbb Z_8$, we know that 8 is not prime and thus not all [a]'s are co-prime to 8. If [a] is not coprime to 7 this would result in $d = \gcd([a],8] \neq 1$ and thus MAT could not apply as $d\nmid1$, which means for all [b] of that a:
+This happens because 7 is a prime and [a] is co-prime to 7. This means that $ d = \gcd([a],7]) = 1$ and by definition of MAT since $d|1$ there must be a solution [b] for each [a] that solves the above equality (which means [a] will have a multiplictive inverse). This means that $\mathbb Z_7$ is a field\\\\
+On the other hand if we take $\mathbb Z_8$, we know that 8 is not prime and thus not all [a]'s are co-prime to 8. If [a] is not coprime to 8 this would result in $d = \gcd([a],[8]) \neq 1$ and thus MAT could not apply as $d\nmid1$, which means for all possible [b] values of that given [a]:
 
 \[ [a][b] \not\equiv 1 \]
 
-Which means that [a] has no multiplicitive inverse. As an illistutive example lets consider [a] = [2] the multiplictive table will give us:
+Which means that [a] has no multiplicative illustrative . As an illistutive example lets consider [a] = [2] the multiplicative table will give us:
 
 \begin{center}
  \begin{tabular}{||c | | c c c c c c c c||} 
@@ -80,5 +80,5 @@ Which means that [a] has no multiplicitive inverse. As an illistutive example le
 \end{tabular}
 \end{center}
 
-We can thus see that [1] is never a result and thus [a] will never have a multiplictive inverse in $\mathbb Z_8$.
+We can thus see that [1] is never a result and thus [a] will never have a multiplicative  inverse in $\mathbb Z_8$, thus it is not a field.
 \end{document}
