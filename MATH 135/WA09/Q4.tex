@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q04a} Let $n$ be a positive integer and let $a$ be an integer, to begin we will take the contrapositive of the starting statement, we will thus get that:
+\[ \text{if a is odd} \implies (a^2)^{n-1} \equiv 1 \ \text{(mod $2^n$)} \]
+We can prove this using induction;
+
+Base Case: n = 1:
+Subsituting $n$ for 1 into our starting equation we get:
+\begin{align*}
+ (a^2)^{n-1} & \equiv 1 \ \text{(mod $2^n$)} \\
+ (a^2)^{1-1} & \equiv 1 \ \text{(mod $2^1$)} \\
+ a^0 & \equiv 1 \ \text{(mod 2)} \\
+ 1 & \equiv 1 \ \text{(mod 2)} \\
+\end{align*}
+Thus proving the base case or when n is 1.
+
+Inductive Hypothesis: Let a $k$ exist such that $k \geq 1$, we will also assume that any $(a^2)^{k-1} \equiv 1$ (mod $2^k)$. To start we will need to prove that $(a^2)^{k} \equiv 1$ (mod $2^{k+1})$.\\
+\begin{align*}
+ (a^2)^{k} & \equiv  (a^2)^{k-1}(a^2)\\
+\end{align*}
+Note from out hypothesis that:
+\[ (a^2)^{k-1} \equiv 1 \ \ \text{(mod $2^k$)}  \]
+Which is the same thing as for some integer $s$:
+\[ (a^2)^{k-1} \equiv 1 +  s\cdot2^k\]
+Thus plugging this in we get that:
+\begin{align*}
+ (a^2)^{k} & \equiv  (a^2)^{k-1}(a^2)\\
+& \equiv  (1 +  s\cdot 2^k) (a^2)\\
+\end{align*}
+We know that since a is odd that means for some t,$ a^2$ can be expressed as:
+\[ a^2 = 1 + t\cdot2 \]
+Thus our equation becomes 
+\begin{align*}
+(1 +  s\cdot 2^k) (a^2) & \equiv (1 +  s\cdot 2^k) (1+t\cdot2)  \\
+& \equiv  1 +  t\cdot 2 + s\cdot 2^k + s\cdot 2^k \cdot t \cdot2  \\
+\end{align*}
+Let c = b + t, we thus get:
+\begin{align*}
+1 +  t\cdot 2 + s\cdot 2^k + s\cdot 2^k \cdot t \cdot2  & \equiv   1 +   2\cdot c \cdot 2^k + s\cdot 2^k \cdot t \cdot2 \\
+ & \equiv 1 +   c \cdot 2^{k+1} + s\cdot 2^{k+1} \cdot t 
+\end{align*}
+Thus applying mod we get that:
+\begin{align*}
+ (a^2)^{k} & \equiv 1 +   c \cdot 2^{k+1} + s\cdot 2^{k+1} \cdot t \\
+& \equiv 1 +   c \cdot 2^{k+1} + s\cdot 2^{k+1} \cdot t \ \ \text{mod $2^{k+1}$} \\
+& \equiv 1 +   c \cdot 0+ s\cdot0 \cdot t \ \ \text{mod $2^{k+1}$} \\
+& \equiv 1 \ \ \text{mod $2^{k+1}$}
+\end{align*}
+Since the hypothesis is now correctly shown the induction is complete and thus we have proved the statement by contrapositive and induction/
+
+\textbf{Q04b} First take the contrapositive of the statement, so we will get where p is prime:
+\[ p \not{|} \ a \implies \ \text{if a is even or} (a^{2(p-1)})^n-1 \equiv 1 \ \ \text{(mod $2^np$)} \]
+Lets look at the first case:
+\[ p \not{|} \ a \implies (a^{2(p-1)})^n-1 \equiv 1 \ \ \text{(mod $2^np$)} \]
+Since we are we are assuming the second case is false, this means that a is even. We know from the previous question that when a is odd it can be expressed as for some integer k:
+\[ (a^2)^{k-1} \equiv 1 \ \text{(mod $2^k$)} \]
+If we raise both sides to the power of (p-1) we end up getting:
+\[ (a^2)^{(k-1)(p-1)} \equiv 1^(p-1) \ \text{(mod $2^k$)} \]
+\[ (a^2)^{(k-1)(p-1)} \equiv 1 \ \text{(mod $2^k$)} \]
+We can use FLT as p can not divide the left values and since $p|a$ and a is to the power of c:
+\[ (a^2)^{(k-1)(p-1)} \equiv 1 \ \text{(mod $p$)} \]
+We also know that the $\gcd(p, 2^n) = 1$ so we can use CRT:
+\[ (a^2)^{(k-1)(p-1)} \equiv 1 \ \text{(mod $2^kp$)} \]
+Thus proving the contrapositive as in the other case $p$ and never divide $a$ as $a$ is even and p by definition is an odd prime!
+\end{document}

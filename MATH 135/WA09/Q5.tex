@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q05A} We know that the orginal expression can be expressed as:
+\[ [x]^{p_2} + [x] - [1] \equiv [0] \ \text{(mod $p_1p_2$)} \]
+We know that since $p_1$ and $p_2$ are distinct odd primes such that $\gcd(p1,p2) = 1$. This means we can apply SMT, so we get two equations the together will have the same solution as in the (mod $m$) case:
+$$
+\begin{cases}
+1) \ \ [x]^{p_2} + [x] - [1] \equiv [0] \ \text{ (mod $p_1$)} \\
+2) \ \ [x]^{p_2} + [x] - [1] \equiv [0] \ \text{ (mod $p_2$)}
+\end{cases}
+$$
+Before we continue we know that ($p_1$ -1) $|$ ($p_2$ - 1) by the definition of divisibility this implies for some integer $n$:
+\begin{align*}
+ n(p_1 -1) & = p_2 -1 \\
+ n(p_1 -1) + 1 & = p_2 
+\end{align*}
+Taking the the first equation we can thus subsitute it in (Note the use of FLT):
+\begin{align*}
+ [x]^{p_2} + [x] - [1] \equiv [0] \ \text{ (mod $p_1$)} \\
+ [x]^{ n(p_1 -1) + 1} + [x] - [1] \equiv [0]  \ \text{ (mod $p_1$)} \\
+ [x]^{ n(p_1 -1)}[x]^1 + [x] - [1] \equiv [0]  \ \text{ (mod $p_1$)} \\
+ ([x]^{ (p_1 -1)})^{n}[x]^1 + [x] - [1] \equiv [0]  \ \text{ (mod $p_1$)} \\
+ ([1])^{n}[x]^1 + [x] - [1] \equiv [0]  \ \text{ (mod $p_1$)} \\
+ [x]^1 + [x] \equiv [1]  \ \text{ (mod $p_1$)} \\
+ [2][x] \equiv [1]  \ \text{ (mod $p_1$)} \\
+\end{align*}
+We know from Corollary 13 that $[2]^{-1}$ exists and is unique. We willl let this unique integer be [a] = $[2]^{-1}$ (mod $p_1$), our equation thus becomes:
+\begin{align*}
+ [2][x] & \equiv [1]  \ \text{ (mod $p_1$)} \\
+ [2]^{-1}[2][x] & \equiv [1][2]^{-1} \ \text{ (mod $p_1$)} \\
+ [x] & \equiv [a] \ \text{ (mod $p_1$)} \\
+\end{align*}
+We thus will have an equation in the form of (where s is an integer):
+\[ [x] = [a] + [s] \cdot p_1 \]
+If we move on to the second equation now we can simplify (also used FLT):
+\begin{align*}
+ [x]^{p_2} + [x] - [1] \equiv [0] \ \text{ (mod $p_2$)} \\
+ [x]^{ p_2 -1}[x]^1 + [x] - [1] \equiv [0]  \ \text{ (mod $p_2$)} \\
+ [1][x]^1 + [x] - [1] \equiv [0]  \ \text{ (mod $p_2$)} \\
+ [2][x]  \equiv [1]  \ \text{ (mod $p_2$)} 
+\end{align*}
+We know from Corollary 13 that $[2]^{-1}$ exists and is unique. We willl let this unique integer be [b] = $[2]^{-1}$ (mod $p_2$), our equation thus becomes:
+\begin{align*}
+ [2][x] & \equiv [1]  \ \text{ (mod $p_2$)} \\
+ [2]^{-1}[2][x] & \equiv [1][2]^{-1} \ \text{ (mod $p_2$)} \\
+ [x] & \equiv [b] \ \text{ (mod $p_2$)} \\
+\end{align*}
+We thus get an equation in the form of (where t is an integer):
+\[ [x] = [b] + [t] \cdot p_2 \]
+CRT tells us that since $\gcd(p_1,p_2) = 1$ we can apply it and find a solution in $\mathbb{Z}_m$ by replacing t with our value found for equation 1:
+\begin{align*}
+ [x] \equiv & [b] + ([a] + [s] \cdot p_1 ) \cdot p_2 \ \ \  \text{(mod $m$)}\\
+ [x] \equiv & [b] + [a][p_2]+ [s][p_1][p_2] \ \ \  \text{(mod $m$)}\\
+ [x] \equiv & [b] + [a][p_2]+ [s][m] \ \ \  \text{(mod $m$)}\\
+ [x] \equiv & [b] + [a][p_2]\ \ \  \text{(mod $m$)}\\
+\end{align*}
+Since $a$ and $b$ and $p_2$ can only be one set value, CRT thus shows that a unqiue solution [x] exists within $\mathbb{Z}_m$.
+
+\textbf{Q05B} We know a solution will satisfy that equation if it satisfies both:
+$$
+\begin{cases}
+1)  [2][x] \equiv [1]  \ \text{ (mod $p_1$)} \\
+2)  [2][x]  \equiv [1]  \ \text{ (mod $p_2$)} 
+\end{cases}
+$$
+are satisfied. Thus consider $m= 39, p_1 = 3, p_2 = 13$ and our solution $x_0=20$. Notice that the solution is less then 39 and that:
+$$
+\begin{cases}
+1)  [2][20] \equiv [40] \equiv [1]  \ \text{ (mod $3$)} \\
+2)  [2][20] \equiv [40] \equiv [1]  \ \text{ (mod $13$)} 
+\end{cases}
+$$
+Since it satifies the conidtion we have given an example and shown that it therefore exists.
+\end{document}
