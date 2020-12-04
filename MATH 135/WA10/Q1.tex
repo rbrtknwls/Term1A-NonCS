@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Robert (Robbie) Knowles MATH 135 Fall 2020: WA10}
+
+\textbf{Q01A} To start we know that 1147 = 31 $\cdot$ 37, we also thus know that $(p-1)(q-1)$ = 30 $\cdot$ 36 = 1080. To find d we need to solve:
+\[ 47d \equiv 1 \text{ (mod 1080)} \]
+Setting up the LDE we get:
+\[ 1080x + 47d = 1 \]
+Solving using EEA we get that:
+\begin{center}
+ \begin{tabular}{|| c | c | c | c ||} 
+ \hline
+  x & d & r & q\\ 
+ \hline
+\hline
+1 & 0 & 1080 & 0\\ 
+0 & 1 & 47 & 0\\ 
+ 1 & -22 & 46 & 22\\ 
+ -1 & 23 & 1 & 1\\ 
+ 47 & -1080 & 0 & 46\\ 
+\hline
+\end{tabular}
+\end{center}
+Hence we get that our solution for d is 23, which satisfies $1 < 23 < 1080$. The private key will thus be of the form:
+\[ (23, 1147) \]
+
+\textbf{Q01B} We know the the cipher text will be of the form:
+\begin{align*}
+ C_1 & \equiv M_1^e \text{ (mod n)} \\
+ C_1  & \equiv 2^{47}  \text{ (mod 1147)} \\
+ C_1  & \equiv 2^{45}\cdot2^2  \text{ (mod 1147)} \\
+ C_1  & \equiv (2^{15})^3\cdot2^2  \text{ (mod 1147)} \\
+\end{align*}
+We know that $2^{15} = 32768$, which is equivalent to 652 (mod 1147). This means our equation becomes:
+\begin{align*}
+ C_1  & \equiv (652)^3\cdot2^2  \text{ (mod 1147)} \\
+ C_1  & \equiv (277167808)(4)  \text{ (mod 1147)} \\
+ C_1  & \equiv (993)(4)  \text{ (mod 1147)} \\
+ C_1  & \equiv (3972)  \text{ (mod 1147)} \\
+ C_1  & \equiv 531  \text{ (mod 1147)} \\
+\end{align*}
+Since $ 0 \leq 531 < 1147 $, 531 is our cipher text $C_1$.
+
+\textbf{Q01C} We know the the plain text will be of the form:
+\begin{align*}
+ M_2 & \equiv C_2^d \text{ (mod n)} \\
+ M_2  & \equiv 3^{23}  \text{ (mod 1147)} \\
+ M_2  & \equiv 3^{22}\cdot3  \text{ (mod 1147)} \\
+ M_2  & \equiv (3^{11})^2\cdot3  \text{ (mod 1147)} \\
+\end{align*}
+We know that $3^{11} = 177147$, which is equivalent to 509 (mod 1147). This means our equation becomes:
+\begin{align*}
+ M_2  & \equiv (509)^2\cdot3  \text{ (mod 1147)} \\
+ M_2  & \equiv (259081)3  \text{ (mod 1147)} \\
+ M_2  & \equiv (1006)(3)  \text{ (mod 1147)} \\
+ M_2  & \equiv (3018)  \text{ (mod 1147)} \\
+ M_2 & \equiv 724  \text{ (mod 1147)} \\
+\end{align*}
+Since $ 0 \leq 724 < 1147 $, 724  is our plain text text $M_2$.
+\end{document}
