@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TeXtidote analysis</title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+.highlight, .highlight-sh, .highlight-spelling {
+  padding: 2pt;
+  border-radius: 4pt;
+  cursor: help;
+  opacity: 0.7;
+  border: dashed 1px;
+}
+.highlight {
+  background-color: orange;
+  color: black;
+}
+.highlight-sh {
+  background-color: yellow;
+  color: black;
+}
+.highlight-spelling {
+  background-color: red;
+  color: white;
+}
+div.original-file {
+  font-family: monospace;
+  font-size: 11pt;
+  background-color: #f8f8ff;
+  padding: 20pt;
+  border-radius: 6pt;
+}
+.textidote {
+  	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiAgIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyIgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiICAgd2lkdGg9IjEwMC4wOTEwNW1tIiAgIGhlaWdodD0iMTguMjA5MDk5bW0iICAgdmlld0JveD0iMCAwIDEwMC4wOTEwNSAxOC4yMDkwOTkiICAgdmVyc2lvbj0iMS4xIiAgIGlkPSJzdmc4IiAgIGlua3NjYXBlOnZlcnNpb249IjAuOTEgcjEzNzI1IiAgIHNvZGlwb2RpOmRvY25hbWU9InRleHRpZG90ZS5zdmciPiAgPGRlZnMgICAgIGlkPSJkZWZzMiIgLz4gIDxzb2RpcG9kaTpuYW1lZHZpZXcgICAgIGlkPSJiYXNlIiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiICAgICBib3JkZXJvcGFjaXR5PSIxLjAiICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIgICAgIGlua3NjYXBlOnpvb209IjEiICAgICBpbmtzY2FwZTpjeD0iLTI1NC4yNTMwOSIgICAgIGlua3NjYXBlOmN5PSItMjc4LjM3NTkxIiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9Im1tIiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIiAgICAgc2hvd2dyaWQ9ImZhbHNlIiAgICAgZml0LW1hcmdpbi10b3A9IjAiICAgICBmaXQtbWFyZ2luLWxlZnQ9IjAiICAgICBmaXQtbWFyZ2luLXJpZ2h0PSIwIiAgICAgZml0LW1hcmdpbi1ib3R0b209IjAiICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjE5MjAiICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDIxIiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMjY1IiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIgLz4gIDxtZXRhZGF0YSAgICAgaWQ9Im1ldGFkYXRhNSI+ICAgIDxyZGY6UkRGPiAgICAgIDxjYzpXb3JrICAgICAgICAgcmRmOmFib3V0PSIiPiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+ICAgICAgICA8ZGM6dHlwZSAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4gICAgICAgIDxkYzp0aXRsZSAvPiAgICAgIDwvY2M6V29yaz4gICAgPC9yZGY6UkRGPiAgPC9tZXRhZGF0YT4gIDxnICAgICBpbmtzY2FwZTpsYWJlbD0iTGF5ZXIgMSIgICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiICAgICBpZD0ibGF5ZXIxIiAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI5LjczODA5NSwtNzAuNTc3NzUxKSI+ICAgIDxnICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zaXplOjIwLjkyODk0NTU0cHg7bGluZS1oZWlnaHQ6MS4yNTtmb250LWZhbWlseTpzYW5zLXNlcmlmO2xldHRlci1zcGFjaW5nOjBweDt3b3JkLXNwYWNpbmc6MHB4O2ZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS45Nzc1MzgyMztzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZSIgICAgICAgaWQ9InRleHQ4MzYiPiAgICAgIDxwYXRoICAgICAgICAgZD0ibSAzMC43MjY4NjQsNzEuNTY2NTIgNS4yMzIyMzYsMCAwLDQuMjA5MDQ0IDUuODEzNTk2LDAgMCwzLjYwNDQyOSAtNS44MTM1OTYsMCAwLDQuODEzNjU4IDUuODEzNTk2LDAgMCwzLjYwNDQyOSAtMTEuMDQ1ODMyLDAgMCwtMTYuMjMxNTYgeiIgICAgICAgICBzdHlsZT0iZm9udC1zdHlsZTpub3JtYWw7Zm9udC12YXJpYW50Om5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zdHJldGNoOm5vcm1hbDtmb250LWZhbWlseTpUdXRvcjstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOlR1dG9yO2ZpbGw6I2ZmZmZmZjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS45Nzc1MzgyMztzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZSIgICAgICAgICBpZD0icGF0aDMzODYiIC8+ICAgICAgPHBhdGggICAgICAgICBkPSJtIDQyLjMzNTg4OCw3NS43NzU1NjQgMTEuMDQ1ODMyLDAgMCw3LjgxMzQ3MyAtNS44MTM1OTYsMCAwLDAuNjA0NjE0IDUuODEzNTk2LDAgMCwzLjYwNDQyOSAtMTEuMDQ1ODMyLDAgMCwtMTIuMDIyNTE2IHogbSA1LjIzMjIzNiw0LjIwOTA0MyAwLjU4MTM2LDAgMCwtMC42MDQ2MTQgLTAuNTgxMzYsMCAwLDAuNjA0NjE0IHoiICAgICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7Zm9udC1mYW1pbHk6VHV0b3I7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpUdXRvcjtmaWxsOiNmZmZmZmY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuOTc3NTM4MjM7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmUiICAgICAgICAgaWQ9InBhdGgzMzg4IiAvPiAgICAgIDxwYXRoICAgICAgICAgZD0ibSA1My45NDQ5MTIsNzUuNzc1NTY0IDUuMjMyMjM2LDAgMCwzLjYwNDQyOSAtNS4yMzIyMzYsMCAwLC0zLjYwNDQyOSB6IG0gNS44MTM1OTYsMCA1LjIzMjIzNiwwIDAsMy42MDQ0MjkgLTUuMjMyMjM2LDAgMCwtMy42MDQ0MjkgeiBtIC01LjgxMzU5Niw4LjQxODA4NyA1LjIzMjIzNiwwIDAsMy42MDQ0MjkgLTUuMjMyMjM2LDAgMCwtMy42MDQ0MjkgeiBtIDUuODEzNTk2LDAgNS4yMzIyMzYsMCAwLDMuNjA0NDI5IC01LjIzMjIzNiwwIDAsLTMuNjA0NDI5IHoiICAgICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7Zm9udC1mYW1pbHk6VHV0b3I7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpUdXRvcjtmaWxsOiNmZmZmZmY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuOTc3NTM4MjM7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmUiICAgICAgICAgaWQ9InBhdGgzMzkwIiAvPiAgICAgIDxwYXRoICAgICAgICAgZD0ibSA2NS41NTM5MzYsNzEuNTY2NTIgNS4yMzIyMzYsMCAwLDQuMjA5MDQ0IDUuODEzNTk2LDAgMCwzLjYwNDQyOSAtNS44MTM1OTYsMCAwLDQuODEzNjU4IDUuODEzNTk2LDAgMCwzLjYwNDQyOSAtMTEuMDQ1ODMyLDAgMCwtMTYuMjMxNTYgeiIgICAgICAgICBzdHlsZT0iZm9udC1zdHlsZTpub3JtYWw7Zm9udC12YXJpYW50Om5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zdHJldGNoOm5vcm1hbDtmb250LWZhbWlseTpUdXRvcjstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOlR1dG9yO2ZpbGw6I2ZmZmZmZjtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MS45Nzc1MzgyMztzdHJva2UtbWl0ZXJsaW1pdDo0O3N0cm9rZS1kYXNoYXJyYXk6bm9uZSIgICAgICAgICBpZD0icGF0aDMzOTIiIC8+ICAgICAgPHBhdGggICAgICAgICBkPSJtIDc3LjE2Mjk2LDc1Ljc3NTU2NCA1LjIzMjIzNiwwIDAsMTIuMDIyNTE2IC01LjIzMjIzNiwwIDAsLTEyLjAyMjUxNiB6IG0gMCwtNC4yMDkwNDQgNS4yMzIyMzYsMCAwLDMuNjA0NDMgLTUuMjMyMjM2LDAgMCwtMy42MDQ0MyB6IiAgICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtZmFtaWx5OlR1dG9yOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246VHV0b3I7ZmlsbDojZmZmZmZmO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjk3NzUzODIzO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAgICAgICAgIGlkPSJwYXRoMzM5NCIgLz4gICAgICA8cGF0aCAgICAgICAgIGQ9Im0gODIuOTY3NDcyLDc1Ljc3NTU2NCA1LjgxMzU5NiwwIDAsLTQuMjA5MDQ0IDUuMjMyMjM2LDAgMCwxNi4yMzE1NiAtMTEuMDQ1ODMyLDAgMCwtMTIuMDIyNTE2IHogbSA1LjIzMjIzNiw4LjQxODA4NyAwLjU4MTM2LDAgMCwtNC44MTM2NTggLTAuNTgxMzYsMCAwLDQuODEzNjU4IHoiICAgICAgICAgc3R5bGU9ImZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7Zm9udC1mYW1pbHk6VHV0b3I7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpUdXRvcjtmaWxsOiNmZmZmZmY7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjEuOTc3NTM4MjM7c3Ryb2tlLW1pdGVybGltaXQ6NDtzdHJva2UtZGFzaGFycmF5Om5vbmUiICAgICAgICAgaWQ9InBhdGgzMzk2IiAvPiAgICAgIDxwYXRoICAgICAgICAgZD0ibSA5NC41NzY0OTYsNzUuNzc1NTY0IDExLjA0NTgzNCwwIDAsMTIuMDIyNTE2IC0xMS4wNDU4MzQsMCAwLC0xMi4wMjI1MTYgeiBtIDUuMjMyMjM3LDguNDE4MDg3IDAuNTgxMzU3LDAgMCwtNC44MTM2NTggLTAuNTgxMzU3LDAgMCw0LjgxMzY1OCB6IiAgICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtZmFtaWx5OlR1dG9yOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246VHV0b3I7ZmlsbDojZmZmZmZmO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjk3NzUzODIzO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAgICAgICAgIGlkPSJwYXRoMzM5OCIgLz4gICAgICA8cGF0aCAgICAgICAgIGQ9Im0gMTA2LjE4NTUyLDcxLjU2NjUyIDUuMjMyMjQsMCAwLDQuMjA5MDQ0IDUuODEzNTksMCAwLDMuNjA0NDI5IC01LjgxMzU5LDAgMCw0LjgxMzY1OCA1LjgxMzU5LDAgMCwzLjYwNDQyOSAtMTEuMDQ1ODMsMCAwLC0xNi4yMzE1NiB6IiAgICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtZmFtaWx5OlR1dG9yOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246VHV0b3I7ZmlsbDojZmZmZmZmO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjk3NzUzODIzO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAgICAgICAgIGlkPSJwYXRoMzQwMCIgLz4gICAgICA8cGF0aCAgICAgICAgIGQ9Im0gMTE3Ljc5NDU0LDc1Ljc3NTU2NCAxMS4wNDU4NCwwIDAsNy44MTM0NzMgLTUuODEzNiwwIDAsMC42MDQ2MTQgNS44MTM2LDAgMCwzLjYwNDQyOSAtMTEuMDQ1ODQsMCAwLC0xMi4wMjI1MTYgeiBtIDUuMjMyMjQsNC4yMDkwNDMgMC41ODEzNiwwIDAsLTAuNjA0NjE0IC0wLjU4MTM2LDAgMCwwLjYwNDYxNCB6IiAgICAgICAgIHN0eWxlPSJmb250LXN0eWxlOm5vcm1hbDtmb250LXZhcmlhbnQ6bm9ybWFsO2ZvbnQtd2VpZ2h0Om5vcm1hbDtmb250LXN0cmV0Y2g6bm9ybWFsO2ZvbnQtZmFtaWx5OlR1dG9yOy1pbmtzY2FwZS1mb250LXNwZWNpZmljYXRpb246VHV0b3I7ZmlsbDojZmZmZmZmO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoxLjk3NzUzODIzO3N0cm9rZS1taXRlcmxpbWl0OjQ7c3Ryb2tlLWRhc2hhcnJheTpub25lIiAgICAgICAgIGlkPSJwYXRoMzQwMiIgLz4gICAgPC9nPiAgPC9nPjwvc3ZnPg==);
+}
+h2.filename {
+  font-family: monospace;
+}
+h1.textidote {
+  width: 378px;
+  height: 68px;
+  display: block;
+}
+.keyword1 {
+  font-weight: bold;
+  color: green;
+}
+.keyword2 {
+  font-weight: bold;
+  color: darkblue;
+}
+.comment, .comment * {
+  color: darkred;
+  font-weight: normal;
+}
+.linenb {
+  font-style: italic;
+  color: lightgrey;
+  width: 30pt;
+  float: left;
+  margin-top: 1pt;
+  margin-bottom: 1pt;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.codeline {
+  margin-left: -30pt;
+  padding-left: 60pt;
+  margin-top: 1pt;
+  margin-bottom: 1pt;
+}
+.no-text {
+  display: none;
+}
+.clear {
+  clear: both;
+}
+</style>
+</head>
+<body>
+<a href="https://sylvainhalle.github.io/textidote"><h1 class="textidote"><span class="no-text">Results of TeXtidote analysis</span></h1></a>
+<p>Here is the result of analyzing your file(s) with TeXtidote. Hover the mouse over highlighted portions of the document to read a tooltip that gives you some writing advice.</p>
+<p>Found 0 warning(s)</p>
+<div class="original-file">
+<div class="linenb">&nbsp;1</div><div class="codeline"><span class="keyword1">\documentclass</span>[11pt]{article}</div><div class="clear"></div>
+<div class="linenb">&nbsp;2</div><div class="codeline">\textwidth 15cm </div><div class="clear"></div>
+<div class="linenb">&nbsp;3</div><div class="codeline">\textheight 21.3cm</div><div class="clear"></div>
+<div class="linenb">&nbsp;4</div><div class="codeline">\evensidemargin 6mm</div><div class="clear"></div>
+<div class="linenb">&nbsp;5</div><div class="codeline">\oddsidemargin 6mm</div><div class="clear"></div>
+<div class="linenb">&nbsp;6</div><div class="codeline">\topmargin -1.1cm</div><div class="clear"></div>
+<div class="linenb">&nbsp;7</div><div class="codeline">\setlength{\parskip}{1.5ex}</div><div class="clear"></div>
+<div class="linenb">&nbsp;8</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">&nbsp;9</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">10</div><div class="codeline"><span class="keyword1">\usepackage</span>{amsfonts,amsmath,amssymb,enumerate}</div><div class="clear"></div>
+<div class="linenb">11</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">12</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">13</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">14</div><div class="codeline"><span class="keyword2">\begin{document}</span></div><div class="clear"></div>
+<div class="linenb">15</div><div class="codeline">\parindent=0pt</div><div class="clear"></div>
+<div class="linenb">16</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">17</div><div class="codeline"><span class="keyword1">\textbf</span>{Robert (Robbie) Knowles MATH 135 Fall 2020: WA10}</div><div class="clear"></div>
+<div class="linenb">18</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">19</div><div class="codeline"><span class="keyword1">\textbf</span>{Q01A} To start we know that 1147 = 31 $\cdot$ 37, we also thus know that $(p-1)(q-1)$ = 30 $\cdot$ 36 = 1080. To find d we need to solve:</div><div class="clear"></div>
+<div class="linenb">20</div><div class="codeline">\[ 47d \equiv 1 \text{ (mod 1080)} \]</div><div class="clear"></div>
+<div class="linenb">21</div><div class="codeline">Setting up the LDE we get:</div><div class="clear"></div>
+<div class="linenb">22</div><div class="codeline">\[ 1080x + 47d = 1 \]</div><div class="clear"></div>
+<div class="linenb">23</div><div class="codeline">Solving using EEA we get that:</div><div class="clear"></div>
+<div class="linenb">24</div><div class="codeline"><span class="keyword2">\begin{center}</span></div><div class="clear"></div>
+<div class="linenb">25</div><div class="codeline"> <span class="keyword2">\begin{tabular}</span>{|| c | c | c | c ||} </div><div class="clear"></div>
+<div class="linenb">26</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">27</div><div class="codeline">  x &amp; d &amp; r &amp; q\\ </div><div class="clear"></div>
+<div class="linenb">28</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">29</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">30</div><div class="codeline">1 &amp; 0 &amp; 1080 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">31</div><div class="codeline">0 &amp; 1 &amp; 47 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">32</div><div class="codeline"> 1 &amp; -22 &amp; 46 &amp; 22\\ </div><div class="clear"></div>
+<div class="linenb">33</div><div class="codeline"> -1 &amp; 23 &amp; 1 &amp; 1\\ </div><div class="clear"></div>
+<div class="linenb">34</div><div class="codeline"> 47 &amp; -1080 &amp; 0 &amp; 46\\ </div><div class="clear"></div>
+<div class="linenb">35</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">36</div><div class="codeline"><span class="keyword2">\end{tabular}</span></div><div class="clear"></div>
+<div class="linenb">37</div><div class="codeline"><span class="keyword2">\end{center}</span></div><div class="clear"></div>
+<div class="linenb">38</div><div class="codeline">Hence we get that our solution for d is 23, which satisfies 1 &lt; 23 &lt; 1080. The private key will thus be of the form:</div><div class="clear"></div>
+<div class="linenb">39</div><div class="codeline">\[ (23, 1147) \]</div><div class="clear"></div>
+<div class="linenb">40</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">41</div><div class="codeline"><span class="keyword1">\textbf</span>{Q01B} We know the </div><div class="clear"></div>
+<div class="linenb">42</div><div class="codeline"><span class="keyword1">\textbf</span>{Q01A} To start we know that 1147 = 31 $\cdot$ 37, we also thus know that $(p-1)(q-1)$ = 30 $\cdot$ 36 = 1080. To find d we need to solve:</div><div class="clear"></div>
+<div class="linenb">43</div><div class="codeline">\[ 47d \equiv 1 \text{ (mod 1080)} \]</div><div class="clear"></div>
+<div class="linenb">44</div><div class="codeline">Setting up the LDE we get:</div><div class="clear"></div>
+<div class="linenb">45</div><div class="codeline">\[ 1080x + 47d = 1 \]</div><div class="clear"></div>
+<div class="linenb">46</div><div class="codeline">Solving using EEA we get that:</div><div class="clear"></div>
+<div class="linenb">47</div><div class="codeline"><span class="keyword2">\begin{center}</span></div><div class="clear"></div>
+<div class="linenb">48</div><div class="codeline"> <span class="keyword2">\begin{tabular}</span>{|| c | c | c | c ||} </div><div class="clear"></div>
+<div class="linenb">49</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">50</div><div class="codeline">  x &amp; d &amp; r &amp; q\\ </div><div class="clear"></div>
+<div class="linenb">51</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">52</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">53</div><div class="codeline">1 &amp; 0 &amp; 1080 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">54</div><div class="codeline">0 &amp; 1 &amp; 47 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">55</div><div class="codeline"> 1 &amp; -22 &amp; 46 &amp; 22\\ </div><div class="clear"></div>
+<div class="linenb">56</div><div class="codeline"> -1 &amp; 23 &amp; 1 &amp; 1\\ </div><div class="clear"></div>
+<div class="linenb">57</div><div class="codeline"> 47 &amp; -1080 &amp; 0 &amp; 46\\ </div><div class="clear"></div>
+<div class="linenb">58</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">59</div><div class="codeline"><span class="keyword2">\end{tabular}</span></div><div class="clear"></div>
+<div class="linenb">60</div><div class="codeline"><span class="keyword2">\end{center}</span></div><div class="clear"></div>
+<div class="linenb">61</div><div class="codeline">Hence we get that our solution for d is 23, which satisfies 1 &lt; 23 &lt; 1080. The private key will thus be of the form:</div><div class="clear"></div>
+<div class="linenb">62</div><div class="codeline">\[ (23, 1147) \]</div><div class="clear"></div>
+<div class="linenb">63</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">64</div><div class="codeline"><span class="keyword1">\textbf</span>{Q01B} We know the <span class="keyword1">\textbf</span>{Q01A} To start we know that 1147 = 31 $\cdot$ 37, we also thus know that $(p-1)(q-1)$ = 30 $\cdot$ 36 = 1080. To find d we need to solve:</div><div class="clear"></div>
+<div class="linenb">65</div><div class="codeline">\[ 47d \equiv 1 \text{ (mod 1080)} \]</div><div class="clear"></div>
+<div class="linenb">66</div><div class="codeline">Setting up the LDE we get:</div><div class="clear"></div>
+<div class="linenb">67</div><div class="codeline">\[ 1080x + 47d = 1 \]</div><div class="clear"></div>
+<div class="linenb">68</div><div class="codeline">Solving using EEA we get that:</div><div class="clear"></div>
+<div class="linenb">69</div><div class="codeline"><span class="keyword2">\begin{center}</span></div><div class="clear"></div>
+<div class="linenb">70</div><div class="codeline"> <span class="keyword2">\begin{tabular}</span>{|| c | c | c | c ||} </div><div class="clear"></div>
+<div class="linenb">71</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">72</div><div class="codeline">  x &amp; d &amp; r &amp; q\\ </div><div class="clear"></div>
+<div class="linenb">73</div><div class="codeline"> \hline</div><div class="clear"></div>
+<div class="linenb">74</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">75</div><div class="codeline">1 &amp; 0 &amp; 1080 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">76</div><div class="codeline">0 &amp; 1 &amp; 47 &amp; 0\\ </div><div class="clear"></div>
+<div class="linenb">77</div><div class="codeline"> 1 &amp; -22 &amp; 46 &amp; 22\\ </div><div class="clear"></div>
+<div class="linenb">78</div><div class="codeline"> -1 &amp; 23 &amp; 1 &amp; 1\\ </div><div class="clear"></div>
+<div class="linenb">79</div><div class="codeline"> 47 &amp; -1080 &amp; 0 &amp; 46\\ </div><div class="clear"></div>
+<div class="linenb">80</div><div class="codeline">\hline</div><div class="clear"></div>
+<div class="linenb">81</div><div class="codeline"><span class="keyword2">\end{tabular}</span></div><div class="clear"></div>
+<div class="linenb">82</div><div class="codeline"><span class="keyword2">\end{center}</span></div><div class="clear"></div>
+<div class="linenb">83</div><div class="codeline">Hence we get that our solution for d is 23, which satisfies 1 &lt; 23 &lt; 1080. The private key will thus be of the form:</div><div class="clear"></div>
+<div class="linenb">84</div><div class="codeline">\[ (23, 1147) \]</div><div class="clear"></div>
+<div class="linenb">85</div><div class="codeline">&nbsp;</div><div class="clear"></div>
+<div class="linenb">86</div><div class="codeline"><span class="keyword1">\textbf</span>{Q01B} We know the shitt fukkk</div><div class="clear"></div>
+<div class="linenb">87</div><div class="codeline"><span class="keyword2">\end{document}</span></div><div class="clear"></div>
+</div>
+<hr/>
+Output produced by TeXtidote v0.8.1, &copy; 2018-2019 Sylvain Hall&eacute; - All rights reserved.<br/>
+See the <a href="https://sylvainhalle.github.io/sylvainhalle/textidote">TeXtidote website</a> for more information.
+</body>
+</html>

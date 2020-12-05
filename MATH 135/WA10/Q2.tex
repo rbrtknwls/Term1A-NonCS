@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q02A} Let $a, b$ be real numbers ($a,b \in \mathbb{R}$) such that the complex numbers $w$ and $z$  ($w,z \in \mathbb{R}$) can be represented as:
+\begin{align*}
+ z & = a + bi \\
+ w  & = 1+ z = (1+a) + bi
+\end{align*}
+We know that $|w|$ and $|z|$ can be expressed as:
+\begin{align*}
+ |z| & = \sqrt{a^2 + b^2} \\
+ |w|  & = \sqrt{ (1+a)^2 + b^2}
+\end{align*}
+We also know that:
+\[ |w| = |z| = 1 \]
+We also know that we can split this into two equations:
+\begin{center}
+ \begin{tabular}{ c  |  c } 
+  $|z| = 1$ &  $|w| = 1$ \\ 
+\hline\\
+ $\sqrt{a^2 + b^2} = 1 $ & $\sqrt{ (1+a)^2 + b^2} = 1 $  \\ 
+             $a^2 + b^2 = 1^2 $ &  $(1+a)^2 + b^2 = 1^2 $ \\ 
+             $a^2 + b^2 = 1 $ &  $ 1 + 2a + a^2 + b^2 = 1 $ \\ 
+             $a^2  = 1 - b^2 $ &  $ 1 + 2a + a^2 = 1 - b^2 $ \\ 
+
+\end{tabular}
+\end{center}
+This thus tells us that:
+\begin{align*}
+a^2 &= 1 + 2a + a^2 \\
+ 0 &= 1 + 2a \\
+ a & = -\frac{1}{2}\\
+\end{align*}
+Plunging this back into our two equations we get:
+\begin{center}
+\begin{tabular}{ c  |  c } 
+  $|z| = 1$ &  $|w| = 1$ \\ 
+\hline\\
+ $\sqrt{(-\frac{1}{2})^2 + b^2} = 1 $ & $\sqrt{ (1-\frac{1}{2})^2 + b^2} = 1 $  \\ 
+             $(-\frac{1}{2})^2  + b^2 = 1^2 $ &  $(\frac{1}{2})^2 + b^2 = 1^2 $ \\ 
+             $\frac{1}{4} + b^2 = 1 $ &  $ \frac{1}{4} + b^2 = 1 $ \\ 
+\end{tabular}
+\end{center}
+Therefore we will get that:
+\begin{align*}
+ b^2 &= 1 -  \frac{1}{4}  \\
+ b & = \pm \sqrt{\frac{3}{4}}\\
+\end{align*}
+Therefore the only possible pairs of complex numbers $w,z$ that satisfy:
+\[ |w| = |z| = 1 \]
+Are given by the following:
+\[ z = -\frac{1}{2} \pm \sqrt{\frac{3}{4}}i  \]
+\[ w = \frac{1}{2} \pm \sqrt{\frac{3}{4}}i  \]
+
+\textbf{Q02B} Let $z$ and $w$ be arbitrary complex numbers, to start we will split the following equation:
+\[ |z + iw| = |z - iw| \iff  z\overline{w} \in \mathbb R\]
+Into the following implications:
+\begin{center}
+\begin{tabular}{ c  |  c } 
+  $|z + iw| = |z - iw| \implies  z\overline{w} \in \mathbb R $ &  $ z\overline{w} \in \mathbb R \implies |z + iw| = |z - iw|  $ \\ 
+\hline\\
+ $z = a + bi$ (for a,b $\in$ $\mathbb R$ )         &  $z = a + bi$ (for a,b $\in$ $\mathbb R$ )     \\ 
+ $w = c + di$ (for c,d $\in$ $\mathbb R$ )        &    $w = c + di$ (for c,d $\in$ $\mathbb R$ )   \\ 
+&$z\overline{w} = (ac +  bd) + (ad - bc)i$ \\
+ $|z + iw| = |z -iw|$        &     \\ 
+ $|(a+bi) + i(c + di)| = |(a+bi) - i(c + di)|$        &   We know that im$(z\overline{w})$ = 0   \\ 
+ $|a+bi + ci - d| = |a+bi - ic + d)|$        &     \\ 
+ $|(a-d)+(c+b)i| = |(a+d)+(b-c)i|$        &     $ bc - ad = 0$ \\
+ $\sqrt{(a-d)^2+(c+b)^2} = \sqrt{(a+d)^2+(b-c)^2}$       &    $ 4bc= 4ad$    \\ 
+ $(a-d)^2+(c+b)^2 = (a+d)^2+(b-c)^2$        &    $(a-d)^2+(c+b)^2 = (a+d)^2+(b-c)^2$   \\ 
+ $a^2 - 2ad + d^2 +(c+b)^2 = a^2 + 2ad + d^2 +(b-c)^2$        &    $\sqrt{(a-d)^2+(c+b)^2} = \sqrt{(a+d)^2+(b-c)^2}$    \\ 
+ $(c+b)^2 = 4ad+(b-c)^2$        &     $|(a-d)+(c+b)i| = |(a+d)+(b-c)i|$    \\ 
+ $c^2+2bc+b^2 = 4ad+b^2-2bc+c^2$        &     $|a+bi + ci - d| = |a+bi - ic + d| $   \\ 
+ $ 4bc= 4ad$        &    $|(a+bi) + i(c + di)| = |(a+bi) - i(c + di)|$   \\ 
+ $ bc= ad$        &     \\ 
+  & Thus proving the right hand side from   \\ 
+ This implies that bc - ad = 0, if we expand:       &   the hypothesis   \\ 
+&      \\ 
+$z\overline{w} = (ac +  bd) + (ad - bc)i$& (More detail on steps is given on      \\ 
+$z\overline{w} = (ac +  bd) - (bc - ad)i$& the right)       \\ 
+$z\overline{w} = (ac +  bd) - 0i$&      \\ 
+$z\overline{w} = (ac +  bd) $&    \\ 
+ &       \\ 
+Which implies $z\overline{w} \in \mathbb R$ &       \\ 
+\end{tabular}
+\end{center}
+Since both ways are proved we have also proved the if and only if statement.
+\end{document}
