@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q04A} We know from BT we know that we can express $(1+i)^n$ and $(1-i)^n$ as:
+\begin{align*}
+ (1+i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(i)^k \\
+ (1-i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(-i)^k \\
+\end{align*}
+Adding the two together we find that:
+\begin{align*}
+ (1+i)^n +  (1-i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(i)^k + \sum\limits_{k = 0}^n\binom{n}{k}(-i)^k\\
+ & = \sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] 
+\end{align*}
+Notice that we can thus split this sigma into two cases, when k is even and when k is odd. Lets start when k is odd, we know that we can express $k$ as $2d$ + 1 (where $d \in \mathbb N$), so our equation becomes:
+\begin{align*}
+\sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] & = \binom{n}{2d+1}[-i^{2d+1}+i^{2d+1}]  \\
+ & = \binom{n}{2d+1}[(-i^2)^d(-i) + (i^{2})^d(i)]  \\
+ & = \binom{n}{2d+1}[(-1)^d(-i) + (-1)^d(i)]  \\
+ & = \binom{n}{2d+1}[-(-1)^d(i) + (-1)^d(i)]  \\
+ & = \binom{n}{2d+1}[0]  \\
+ & = 0
+\end{align*}
+This means that for each odd k, the value of the summation will be unchanged. \\\\\\\\\\\\\\\\\\\\
+
+In the second case we will let k be even, it can thus be expressed as  $k$ as $2d$ (where $d \in \mathbb N$), so our equation becomes:
+\begin{align*}
+\sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] & = \binom{n}{2d}[-i^{2d}+i^{2d}]  \\
+ & = \binom{n}{2d}[(-i^2)^d + (i^{2})^d]  \\
+ & = \binom{n}{2d}[(-1)^d + (-1)^d]  \\
+ & = \binom{n}{2d}[2(-1)^d] 
+\end{align*}
+We thus know that only even values will impact the summation, the equation for all the even values is:
+\[ \sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}[2(-1)^k] \]
+And because odd values are redundent we find that:
+\[ (1 + i)^n + (1 - i)^n = 2\sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}(-1)^k. \]
+\end{document}
