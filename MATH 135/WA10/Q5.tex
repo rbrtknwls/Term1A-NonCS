@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q05} Let n be a non negative integer. We know the original equation can be split into parts:
+\[  \operatorname{Re}(z_n)\operatorname{Im}(z_n) = 0 \iff 3 \mid n \]
+The first case we shall consider is when:
+\[  3 \mid n  \implies \operatorname{Re}(z_n)\operatorname{Im}(z_n) = 0 \]
+If we assume that $3 | n$, we can also express n (for some integer $k$) as:
+\[ n = 3k \]
+We can thus prove this using induction on $z_n$. 
+Consider the base case $n = 0:$ By definition we know that $z_0 = i, $ which means that the real component is 0. \\
+Assume that for any p which is an integer and n = 3p, such that $\operatorname{Re}(z_n)\operatorname{Im}(z_n) = 0$\\
+Prove p + 1 satisfies the condition:
+\[ \operatorname{Re}(z_{3(p+1)})\operatorname{Im}(z_{3(p+1)}) = 0  \]
+We know that we can express:
+\begin{align*}
+ z_{3p+3} & =  z_{3p+2}z_{3p+1} \\
+& =  z_{3p+1}z_{3p}z_{3p+1} \\ 
+& =  (z_{3p+1})^2z_{3p} \\ 
+\end{align*}
+As well we know that $(z_{3p+1})^2$ will contain either only real values or imaginary values. By definition we know that $z_{3p}$ has only real values or imaginary values. this means that:
+\[ \operatorname{Re}((z_{3p+1})^2z_{3p}) = 0 \text{ or } \operatorname{Im}((z_{3p+1})^2z_{3p}) = 0 \]
+
+In the opposite case we shall consider:
+\[ \operatorname{Re}(z_n)\operatorname{Im}(z_n) = 0 \implies  3 \mid n  \]
+Lets start by splitting this again into two cases:
+\[  \operatorname{Re}(z_n) = 0 \text{ or } \operatorname{Im}(z_n)  = 0 \]
+If we assume the real component is zero, this would mean that (for some real value or imaginary value $m$):
+\begin{align*}
+m & =  z_{n} \\
+& =   z_{n-1} z_{n-2} \\ 
+& =  z_{n-2} z_{n-2} z_{n-3} 
+\end{align*}
+Notice that $z_{n-2} z_{n-2}$ could be $m$. This pattern will repeat until:
+\begin{align*}
+z_{n} & =   (z_{n-2} z_{n-2})\cdot( z_{n-5} z_{n-5})... z_{b}
+\end{align*}
+where b is either 0, 1, 2. Notice that the real or imaginary component being zero will depend on $z_{b}$. Thus we know:
+\[ z_0 = i \]
+\[ z_1 = 1+ i \]
+\[ z_2 = -1 + i \]
+Thus we can tell that the only when $z_0$ that:
+\[  \operatorname{Re}(z_0) = 0 \text{ or } \operatorname{Im}(z_0)  = 0 \]
+This means that for any n where $3|n$ the base case will be zero or in other words:
+\[  \operatorname{Re}(z_n) = 0 \text{ or } \operatorname{Im}(z_n)  = 0 \]
+Therefore since we proved both sides we have proved the if and only if.
+\end{document}
