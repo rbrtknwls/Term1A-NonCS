@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate,mathtools}
+
+\begin{document}
+\parindent=0pt
+
+\textbf{MATH 135 Fall 2020: Written Assignment 10 (WA10)\\Due at 11:55 PM EST on Friday December 4th, 2020\\Covers the contents of Lessons 9.1, 9.2, 9.3, 10.1, 10.2 and 10.3}
+
+\textbf{Q01.} (5 marks) Alice's RSA public key is given by $(e, n) = (47, 1147)$.
+
+\begin{enumerate}[(a)]
+\item (2 marks) Determine Alice's private key $(d, n)$. Show your work.
+
+\item (1 mark) Bob sends his first message $M_1 = 2$ to Alice, encrypting it with RSA using Alice's public key. He obtains a ciphertext $C_1$ that gets forwarded to Alice. What is $C_1$?
+
+\item (2 marks) Bob sends his second message $M_2$ to Alice, encrypting it with RSA using Alice's public key. Alice received the ciphertext $C_2 = 3$ that originated from $M_2$. What is $M_2$?
+\end{enumerate}
+
+\textbf{Q02.} (5 marks)
+
+\begin{enumerate}[(a)]
+\item (2 marks) Find, with proof, all complex numbers $w$ and $z$ such that $w = 1 + z$ and $|w| = |z| = 1$.
+
+\item (3 marks) Prove that, for all complex numbers $z$ and $w$, $|z + iw| = |z - iw|$ \mbox{if and only if} $z\overline{w} \in \mathbb R$.
+\end{enumerate}
+
+\textbf{Q03.} (5 marks) Shade the following region of the complex plane: \mbox{$\left\{i + \overline z \colon 1 < |z| < 4, z \in \mathbb C\right\}$}. Make sure to justify your answer.
+
+\textbf{Q04.} (5 marks) For a real number $x$, let $\lfloor x\rfloor$ denote the largest integer that does not exceed $x$.
+
+\begin{enumerate}[(a)]
+\item (3 marks) Prove that, for every non-negative integer $n$,
+%
+$$
+(1 + i)^n + (1 - i)^n = 2\sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}(-1)^k.
+$$
+
+\item (2 marks) Prove that, for every non-negative integer $n$, $(1 + i)^n + (1 - i)^n = 0$ \mbox{if and only if} $n \equiv 2 \pmod 4$.
+
+\textbf{Hint:} Note that $(1 + i)^4 = (1 - i)^4 = -4$.
+\end{enumerate}
+
+\textbf{Note:} Although these questions look similar, they are unrelated.
+
+\textbf{Q05.} (5 marks) Let $z_0 = i$, $z_1 = 1 + i$, and for $n \geq 2$ define $z_n = z_{n - 1}z_{n - 2}$. Prove that, for every non-negative integer $n$, $\operatorname{Re}(z_n)\operatorname{Im}(z_n) = 0$ if and only if $3 \mid n$.
+\end{document}
