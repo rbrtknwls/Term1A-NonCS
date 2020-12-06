@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q04A} Let n be a non negative integer. We know from BT we know that we can express $(1+i)^n$ and $(1-i)^n$ as:
+\begin{align*}
+ (1+i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(i)^k \\
+ (1-i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(-i)^k \\
+\end{align*}
+Adding the two together we find that:
+\begin{align*}
+ (1+i)^n +  (1-i)^n & = \sum\limits_{k = 0}^n\binom{n}{k}(i)^k + \sum\limits_{k = 0}^n\binom{n}{k}(-i)^k\\
+ & = \sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] 
+\end{align*}
+Notice that we can thus split this sigma into two cases, when k is even and when k is odd. Lets start when k is odd, we know that we can express $k$ as $2d$ + 1 (where $d \in \mathbb N$), so our equation becomes:
+\begin{align*}
+\sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] & = \binom{n}{2d+1}[-i^{2d+1}+i^{2d+1}]  \\
+ & = \binom{n}{2d+1}[(-i^2)^d(-i) + (i^{2})^d(i)]  \\
+ & = \binom{n}{2d+1}[(-1)^d(-i) + (-1)^d(i)]  \\
+ & = \binom{n}{2d+1}[-(-1)^d(i) + (-1)^d(i)]  \\
+ & = \binom{n}{2d+1}[0]  \\
+ & = 0
+\end{align*}
+This means that for each odd k, the value of the summation will be unchanged. \\\\\\\\\\\\\\\\\\\\
+
+In the second case we will let k be even, it can thus be expressed as  $k$ as $2d$ (where $d \in \mathbb N$), so our equation becomes:
+\begin{align*}
+\sum\limits_{k = 0}^n\binom{n}{k}[-i^k+i^k] & = \binom{n}{2d}[-i^{2d}+i^{2d}]  \\
+ & = \binom{n}{2d}[(-i^2)^d + (i^{2})^d]  \\
+ & = \binom{n}{2d}[(-1)^d + (-1)^d]  \\
+ & = \binom{n}{2d}[2(-1)^d] 
+\end{align*}
+We thus know that only even values will impact the summation, the equation for all the even values is:
+\[ \sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}[2(-1)^k]  \text{ or }  2\sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}[(-1)^k] \]
+And because odd values are redundant we find that:
+\[ (1 + i)^n + (1 - i)^n = 2\sum\limits_{k = 0}^{\lfloor n/2\rfloor} \binom{n}{2k}(-1)^k. \]
+
+\textbf{Q04B} Let $n$ be a non negative integer, to start we can split the following into cases:
+\[ (1 + i)^n + (1 - i)^n = 0 \iff n \equiv 2 \pmod 4 \]
+The first case we will consider is:
+\[ n \equiv 2 \pmod 4 \implies  n, (1 + i)^n + (1 - i)^n = 0\]
+If we assume $n \equiv 2 \pmod 4$, this would means for some integer $j$ we could also express $n$ as:
+\[ n = 4j + 2 \]
+We can then plug this into our original equation:
+\begin{align*}
+  (1 + i)^n + (1 - i)^n & = (1 + i)^{4j+2} + (1 - i)^{4j+2}\\
+ & =  (1 + i)^{4j}\cdot(1+i)^2 + (1 - i)^{4j}\cdot(1-i)^2\\
+ & = (-4)^{j}\cdot(1+i)^2 + (-4)^{j}\cdot(1-i)^2\\
+ & = (-4)^{j}[1+2i+i^2 + 1 - 2i +i^2]
+ & = (-4)^{j}[0]
+ & = 0
+\end{align*}
+This thus proves the first case.\\
+
+To find the second case we will consider:
+\[ (1 + i)^n + (1 - i)^n = 0 \implies n \equiv 2 \pmod 4  \]
+We know from the hint that $(1 + i)^4 = (1 - i)^4 = -4$, this means that we can consider $n$ have 4 possibilities (corresponding with mod 4), let $k \in \mathbb R$:
+\[ n = 4k +0, 4k + 1, 4k + 2, 4k + 3 \]
+If we plug it in we get the following table:
+\begin{center}
+ \begin{tabular}{ c  | c } 
+  4k &  4k + 1 \\ 
+\hline\\
+  $(1 + i)^{4j} + (1 - i)^{4j} $ & $ (1 + i)^{4j}\cdot(1+i)^1 + (1 - i)^{4j}\cdot(1-i)^1$ \\
+  $(-4)^{j} + (-4)^{j} $& $ (-4)^{j}\cdot(1+i)^1 + (-4)^{j}\cdot(1-i)^1$ \\
+ Not Zero &  $ (-4)^{j}[(1+i) + (1-i)]$   \\
+  & $ (-4)^{j}[2]^1$  \\
+  & Not Zero \\
+\end{tabular}
+\end{center}
+
+\begin{center}
+ \begin{tabular}{ c  | c } 
+  4k+2 &  4k + 3 \\ 
+\hline\\
+   $ (1 + i)^{4j}\cdot(1+i)^2 + (1 - i)^{4j}\cdot(1-i)^2$ &  $ (1 + i)^{4j}\cdot(1+i)^3 + (1 - i)^{4j}\cdot(1-i)^3$ \\
+   $ (-4)^{j}\cdot(1+i)^2 + (-4)^{j}\cdot(1-i)^2$& $ (-4)^{j}\cdot(1+i)^3 + (-4)^{j}\cdot(1-i)^3$ \\
+  $(-4)^{j}[1+2i+i^2 + 1 - 2i +i^2] $&   $ (-4)^{j}[(1+i)^3 + (1-i)^3]$   \\
+  $(-4)^{j}[0]$ & $ (-4)^{j}[-4]$\\
+  Zero & Not Zero \\
+\end{tabular}
+\end{center}
+Thus showing that the only possible solution is when$ n \equiv 2 \pmod 4$. Since both implications are proved the iff statement is also proved.
+
+\end{document}
