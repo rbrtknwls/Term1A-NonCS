@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q02a} Let b be a real number. We know from the "Critical Point" Theorem (Page 202) that a critical point will happen at some c when:
+\[ f'(c) = 0 \text{ or } f'(c) = DNE \]
+Thus in order to solve we must first find the first derivative.
+\begin{align*}
+f(x) & = x^{\frac{1}{3}} + bx^{\frac{4}{3}}\\
+\frac{dy}{dx}(f(x)) & = \frac{dy}{dx}(x^{\frac{1}{3}} + bx^{\frac{4}{3}})\\
+f'(x) & = \frac{dy}{dx}(x^{\frac{1}{3}}) + \frac{dy}{dx}(bx^{\frac{4}{3}})\\
+f'(x) & = \frac{1}{3}x^{(\frac{1}{3}-1)} + b\frac{4}{3}x^{(\frac{4}{3} -1)}\\
+f'(x) & = \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}}
+\end{align*}
+Since we can see an $x$ is in the denominator for the first term, this would imply that f'(x) is undefined at 0 or:
+\[ f'(0) = DNE \]
+Since there is only one possible value such that$ f'(c) = DNE$, we will now try to solve $f'(c) = 0$, starting by setting f'(x) to be zero:
+\begin{align*}
+0 & = \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}} \\
+ -\frac{1}{3x^{\frac{2}{3}}} & = b\frac{4}{3}x^{\frac{1}{3}} \\
+ -\frac{1}{3x^{\frac{2}{3}}}x^{\frac{2}{3}} & = b\frac{4}{3}x^{\frac{1}{3}}x^{\frac{2}{3}} \\
+ -\frac{1}{3} & = b\frac{4}{3}x \\
+ -\frac{1}{4b} & = x
+\end{align*}
+Therefore our possible critical points will be when:
+\[ x = 0 \text{ or }  -\frac{1}{4b} \] \\\\\\\\\\\\\\
+
+\textbf{Q02b} We know we have two possible values to test if a local minimum can exist, point 0 and point $-\frac{1}{4b}$ (for some real number b). At the end I also prove this using an interval table. \\\\
+To see if 0 in a minimum we shall use "The First Derivative Test" (Page 223)  we will use the interval $(0^-,0^+)$ to check if:
+\begin{align*}
+f'(0^-)<f'(x) < 0 &\text{ for all $x \in (0^-,0)$} \\
+f'(0^+)>f'(x) > 0 &\text{ for all $x \in (0,0^+)$}
+\end{align*}
+Evaluating the first equation we find a contradiction at $f'(0^-)$ we get:
+\begin{align*}
+f'(0^-)< f'(x) < 0 \\
+\frac{1}{3(0^-)^{\frac{2}{3}}} + b\frac{4}{3}(0^-)^{\frac{1}{3}}< f'(x) < 0 \\
+\frac{1}{3(0^+)} + b\frac{4}{3}(0^-)< f'(x) < 0 \\
+\frac{1}{(0^+)} + (0^-)< f'(x) < 0 \\
+\infty + (0^-)< f'(x) < 0 \\
+\infty < f'(x) < 0 
+\end{align*}
+Because this contradicts the First Derivative Test this means that 0 can not be a local minimum (as well this follows logically as the value to the will always be smaller left is smaller).
+\begin{align*}
+f'(x) & = \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}}\\
+\end{align*}
+Moving on we can test the critical point $-\frac{1}{4b}$ using the "Second Derivative Test", in order to solve this we will first find the second derivative.
+\begin{align*}
+f'(x) & = \frac{1}{3}x^{-\frac{2}{3}} + b\frac{4}{3}x^{\frac{1}{3}}\\
+\frac{dy}{dx}f'(x) & = \frac{dy}{dx}(\frac{1}{3}x^{-\frac{2}{3}}) + \frac{dy}{dx}(b\frac{4}{3}x^{\frac{1}{3}})\\
+f''(x) & = \frac{1}{3}\frac{-2}{3}x^{-\frac{5}{3}} + b\frac{4}{3}\frac{1}{3}x^{-\frac{2}{3}}\\
+f''(x) & = \frac{-2}{9}x^{-\frac{5}{3}} + b\frac{4}{9}x^{-\frac{2}{3}}\\
+\end{align*}
+Now we will plug in the critical point (c) and simplify:
+\begin{align*}
+f''(c) & = \frac{-2}{9}(-\frac{1}{4b})^{-\frac{5}{3}} + b\frac{4}{9}(-\frac{1}{4b})^{-\frac{2}{3}}\\
+f''(c) & = \frac{2}{9}(-\frac{1}{4b})^{-\frac{2}{3}}(-(-\frac{1}{4b})^{-1}+2b) \\
+f''(c) & = \frac{2}{9}(-4b)^{\frac{2}{3}}(-(-4b)^{1}+2b) \\
+f''(c) & = \frac{2}{9}\sqrt[\leftroot{-2}\uproot{2}3]{(16b^2)}(6b) 
+\end{align*}
+The "Second Derivative Test" tells us that a minimum will exist at the critical point if:
+\[ f''(c) > 0 \]
+As we can see from the above equation, the positivity is of the equation is solely reliant on the $6b$ term as ($b^2$ will always be positive). Therefore f'(c) > 0 if b is also positive. In other words the minimum will exist as along as:
+\[ b > 0 \]
+Therefore we have shown that the only possible local exist when b is positive and the minimum will exists at:
+\[ -\frac{1}{4b} \]
+\end{document}
