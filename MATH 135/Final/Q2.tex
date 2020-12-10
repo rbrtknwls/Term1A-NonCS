@@ -37,13 +37,13 @@ Since there is only one possible value such that$ f'(c) = DNE$, we will now try 
 Therefore our possible critical points will be when:
 \[ x = 0 \text{ or }  -\frac{1}{4b} \] \\\\\\\\\\\\\\
 
-\textbf{Q02b} We know we have two possible values to test if a local minimum can exist, point 0 and point $-\frac{1}{4b}$ (for some real number b). At the end I also prove this using an interval table. \\\\
+\textbf{Q02b} We know we have two possible values to test if a local minimum can exist, 0 and $-\frac{1}{4b}$ (for some real number b). This is because minimum values points can only exist at critical points\\\\
 To see if 0 in a minimum we shall use "The First Derivative Test" (Page 223)  we will use the interval $(0^-,0^+)$ to check if:
 \begin{align*}
 f'(0^-)<f'(x) < 0 &\text{ for all $x \in (0^-,0)$} \\
 f'(0^+)>f'(x) > 0 &\text{ for all $x \in (0,0^+)$}
 \end{align*}
-Evaluating the first equation we find a contradiction at $f'(0^-)$ we get:
+Evaluating the first equation we find a contradiction at $f'(0^-)$:
 \begin{align*}
 f'(0^-)< f'(x) < 0 \\
 \frac{1}{3(0^-)^{\frac{2}{3}}} + b\frac{4}{3}(0^-)^{\frac{1}{3}}< f'(x) < 0 \\
@@ -52,16 +52,13 @@ f'(0^-)< f'(x) < 0 \\
 \infty + (0^-)< f'(x) < 0 \\
 \infty < f'(x) < 0 
 \end{align*}
-Because this contradicts the First Derivative Test this means that 0 can not be a local minimum (as well this follows logically as the value to the will always be smaller left is smaller).
-\begin{align*}
-f'(x) & = \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}}\\
-\end{align*}
+Because this contradicts the First Derivative Test this means that 0 can not be a local minimum.
 Moving on we can test the critical point $-\frac{1}{4b}$ using the "Second Derivative Test", in order to solve this we will first find the second derivative.
 \begin{align*}
 f'(x) & = \frac{1}{3}x^{-\frac{2}{3}} + b\frac{4}{3}x^{\frac{1}{3}}\\
 \frac{dy}{dx}f'(x) & = \frac{dy}{dx}(\frac{1}{3}x^{-\frac{2}{3}}) + \frac{dy}{dx}(b\frac{4}{3}x^{\frac{1}{3}})\\
 f''(x) & = \frac{1}{3}\frac{-2}{3}x^{-\frac{5}{3}} + b\frac{4}{3}\frac{1}{3}x^{-\frac{2}{3}}\\
-f''(x) & = \frac{-2}{9}x^{-\frac{5}{3}} + b\frac{4}{9}x^{-\frac{2}{3}}\\
+f''(x) & = \frac{-2}{9}x^{-\frac{5}{3}} + b\frac{4}{9}x^{-\frac{2}{3}}
 \end{align*}
 Now we will plug in the critical point (c) and simplify:
 \begin{align*}
@@ -72,8 +69,93 @@ f''(c) & = \frac{2}{9}\sqrt[\leftroot{-2}\uproot{2}3]{(16b^2)}(6b)
 \end{align*}
 The "Second Derivative Test" tells us that a minimum will exist at the critical point if:
 \[ f''(c) > 0 \]
-As we can see from the above equation, the positivity is of the equation is solely reliant on the $6b$ term as ($b^2$ will always be positive). Therefore f'(c) > 0 if b is also positive. In other words the minimum will exist as along as:
+As we can see from the above equation, the positivity is of the equation is solely reliant on the $6b$ term as ($b^2$ will always be positive). Therefore $f'(c) > 0$ if b is also positive. In other words the minimum will exist as along as:
 \[ b > 0 \]
-Therefore we have shown that the only possible local exist when b is positive and the minimum will exists at:
-\[ -\frac{1}{4b} \]
+Therefore we have shown that the only possible local minimum exists when b is positive and the minimum will exist at:
+\[ x= -\frac{1}{4b} \]
+\\\\\
+\textbf{Q02c} We know that intervals (of increase and decrease) will only change sign values critical points, therefore our possible intervals are :
+\begin{center}
+ \begin{tabular}{||c c c c c||} 
+ \hline
+ ($-\infty$, $-\frac{1}{4b})$ & $-\frac{1}{4b}$ & $(-\frac{1}{4b}, 0)$ & 0 & $(0,\infty)$  \\ [0.5ex] 
+ \hline\hline
+& 0 & + & Undefined &\\ 
+ \hline
+\end{tabular}
+\end{center}
+These results were gotten from the previous question, to start solving for the rest we will find the first derivative at negative infinity:
+\[ f'(-\infty) =  \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}} = \frac{1}{3(-\infty)^{\frac{2}{3}}} + b\frac{4}{3}(-\infty)^{\frac{1}{3}} \approx 0 -\infty  \]
+Thus the interval ($-\infty$, $-\frac{1}{4b})$ will be negative, moving onto positive infinity we know that:
+\[ f'(\infty) =  \frac{1}{3x^{\frac{2}{3}}} + b\frac{4}{3}x^{\frac{1}{3}} = \frac{1}{3(\infty)^{\frac{2}{3}}} + b\frac{4}{3}(\infty)^{\frac{1}{3}} \approx 0 + \infty  \]
+Thus the interval $(0,\infty)$ is positive, so we will have the intervals of increase (+) and decrease (-) given by:
+\begin{center}
+ \begin{tabular}{||c c c c c||} 
+ \hline
+ ($-\infty$, $-\frac{1}{4b})$ & $-\frac{1}{4b}$ & $(-\frac{1}{4b}, 0)$ & 0 & $(0,\infty)$  \\ [0.5ex] 
+ \hline\hline
+- & 0 & + & Undefined & +\\ 
+ \hline
+\end{tabular}
+\end{center}
+In order to find the points of concavity we must first find the inflection points, which are determined by:
+\[ f''(x) = 0 \text{ or } f''(x) = DNE \]
+We know from our Part B that our equation for $f''(x)$ is:
+\[ f''(x)  = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4}{9x^{\frac{2}{3}}}\]
+Thus we can tell that this will be indeterminate when x = 0, so this means that x=0 is one of the inflection points. Setting f''(x) = 0 we find that:
+\begin{align*}
+f''(x) & = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4}{9x^{\frac{2}{3}}} \\
+0 & = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4}{9x^{\frac{2}{3}}} \\
+ \frac{-2}{9x^{\frac{5}{3}}}  & = -b\frac{4}{9x^{\frac{2}{3}}} \\
+-2  & = -b\cdot4\cdot x \\
+x &= \frac{1}{2b} \\
+\end{align*}
+And thus our last inflection point will be when $x = \frac{1}{2b}$. When the second derivative is positive we know the function will be concave up, so we can create a table in order to show the concavity:
+\begin{center}
+ \begin{tabular}{||c c c c c||} 
+ \hline
+ ($-\infty, 0$) & 0 & $(0, \frac{1}{2b})$ &  $\frac{1}{2b}$ & $( \frac{1}{2b},\infty)$  \\ [0.5ex] 
+ \hline\hline
+&  undefined &  & 0 &\\ 
+ \hline
+\end{tabular}
+\end{center}
+We know that 0 is undefined from what we saw previously and that $\frac{1}{2b}$ is zero, to start solving the rest we will consider negative infinity:
+\[ f''(-\infty) = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4}{9x^{\frac{2}{3}}} = \frac{-2}{9(-\infty)^{\frac{5}{3}}} + b\frac{4}{9(-\infty)^{\frac{2}{3}}} \approx 0^+ + 0^+\]
+Thus the interval  ($-\infty, 0$) will be positive. We will use $\frac{1}{2b}^-$ to check the next interval:
+\[ f''(\frac{1}{2b}^-) = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4x}{9x^{\frac{5}{3}}} = \frac{-2+4bx}{9x^{\frac{5}{3}}} =   \frac{-2+4b\frac{1}{2b}^-}{9(\frac{1}{2b}^-)^{\frac{5}{3}}} \approx -2 + 2^-\]
+Since the denominator is positive it is redundant, we can see that the numerator is negative 2 plus a number a little less then 2 so the interval $(0, \frac{1}{2b})$ is negative. We will use $\frac{1}{2b}^-$ to check the next interval:
+\[ f''(\frac{1}{2b}^+) = \frac{-2}{9x^{\frac{5}{3}}} + b\frac{4x}{9x^{\frac{5}{3}}} = \frac{-2+4bx}{9x^{\frac{5}{3}}} =   \frac{-2+4b\frac{1}{2b}^+}{9(\frac{1}{2b}^+)^{\frac{5}{3}}} \approx -2 + 2^+\]
+Thus the interval $(\frac{1}{2b},\infty)$ will be positive, so the finalized concave up and concave down table will look like:
+\begin{center}
+ \begin{tabular}{||c c c c c||} 
+ \hline
+ ($-\infty, 0$) & 0 & $(0, \frac{1}{2b})$ &  $\frac{1}{2b}$ & $( \frac{1}{2b},\infty)$  \\ [0.5ex] 
+ \hline\hline
+ + &  undefined & -  & 0 & +\\ 
+ \hline
+\end{tabular}
+\end{center}
+Combining our interval of increase/decrease table and our concavity table we get:
+\begin{center}
+ \begin{tabular}{|c |c c c c c c c||} 
+ \hline
+ &($-\infty$, $-\frac{1}{4b})$ & $-\frac{1}{4b}$ & $(-\frac{1}{4b}, 0)$ &  0 & $(0, \frac{1}{2b})$ &  $\frac{1}{2b}$ & $( \frac{1}{2b},\infty)$  \\ [0.5ex] 
+ \hline\hline
+ f'(x) &- & 0  & + & undefined & +  & + & +\\ 
+ \hline
+ f''(x) &+ &  + & + & undefined & - & 0 & +\\ 
+\hline
+\end{tabular}
+\end{center}
+So in summery the intervals and inflection points are:
+$$
+\begin{cases}
+\text{Interval of Increase}) \ \  (-\frac{1}{4b}, 0) \cup (0,\infty) \\
+\text{Interval of Decrease}) \ \ (-\infty, -\frac{1}{4b}) \\
+\text{Interval of Concave Up}) \ \ (-\infty, 0) \cup ( \frac{1}{2b},\infty) \\
+\text{Interval of Concave Down}) \ \ (0, \frac{1}{2b}) \\
+\text{Inflection Points}) \ \ x = 0,   \frac{1}{2b} \\
+\end{cases}
+$$
 \end{document}
