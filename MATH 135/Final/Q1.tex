@@ -27,17 +27,16 @@ We can further expand out our equation for epsilon:
 \end{align*}
 So we could rewrite the given arbitrary equation as:
 \[ |f(x) + 8||f(x) - 7| < (15 + \epsilon)\epsilon \]
-We can thus define a new epsilon:
+We know that $ (15 + \epsilon)\epsilon$ will result in a value that's a little larger then the original epsilon, so we can define a new epsilon ($\epsilon'$) that's equal to it such that:
 \[ \epsilon' = (15 + \epsilon)\epsilon  \]
-Which results in the previous equation becoming:
+This results in the previous equation becoming:
 \begin{align*}
 |f(x) + 8||f(x) - 7| & <\epsilon' \\
-|(f(x))^2 + f(x) - 56| & <\epsilon' 
+|(f(x))^2 + f(x) - 56| & <\epsilon'  \\
+|(f(x))^2 + f(x) + 1 - 57| & <\epsilon' 
 \end{align*}
-This implies from the  $\epsilon-\delta$ definition that for $ 0 < |x - 4| < \delta $:
+This is in the form $|f(x) -L| < \epsilon' $, so by the  $\epsilon-\delta$ definition it will become: 
 \begin{align*}
- \lim_{x \to 4}[(f(x))^2 + f(x) - 56] & = 0 \\
- \lim_{x \to 4}[(f(x))^2 + f(x) - 56] + 57& = 0 + 57 \\
  \lim_{x \to 4}[(f(x))^2 + f(x) + 1] & = 57
 \end{align*}
 \end{document}
