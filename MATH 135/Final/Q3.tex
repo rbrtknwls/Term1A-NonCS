@@ -29,7 +29,7 @@ Therefore if we let x = 6, we find that:
 6 - 2  & \leq f(6) \leq 30-14 \\
 4  & \leq f(6) \leq 16 
 \end{align*}
-We can thus say that the smallest interval that $f(6)$ is bounded by is [4,16]\\
+We can thus say that the smallest interval that $f(6)$ is bounded by is [4,16]\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
 \textbf{Q03b} The textbook defines the second order Taylor Polynomial as (for some real x = a):
@@ -43,7 +43,50 @@ From definition we know that $f(3) = 1$, $f'(3) = 5$ and $f''(3) = 7$, so we can
 T_{2,3}& = \frac{1}{0!} + \frac{5}{1!}(x-3)^1 + \frac{7}{2!}(x-3)^2 \\
 T_{2,3}& = 1 + 5(x-3) + \frac{7}{2}(x^2-6x+9) \\
 T_{2,3}& = 1 + 5x - 15 + \frac{7x^2}{2} - \frac{42x}{2} +\frac{63}{2}  \\
-T_{2,3}& = 1 + 5x - \frac{30}{2} + \frac{7x^2}{2} - 21x +\frac{63}{2}  \\
-T_{2,3}& = 1 + \frac{7x^2}{2} - 16x +\frac{33}{2}  \\
+T_{2,3}& = \frac{2}{2} + 5x - \frac{30}{2} + \frac{7x^2}{2} - 21x +\frac{63}{2}  \\
+T_{2,3}& = \frac{7x^2}{2} - 16x +\frac{35}{2}  \\
 \end{align*}
+Thus giving us the answer for the second order Taylor Polynomial centered around 3. \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+\textbf{Q03c} We know from the previous question that the second order Taylor Polynomial centered around 3 is:
+\[ T_{2,3} = \frac{7x^2}{2} - 16x +\frac{35}{2} \]
+Therefore we can approximate $f(5)$ by letting $x = 5$, so we get:
+\begin{align*}
+T_{2,3}& = \frac{7(5)^2}{2} - 16(5) +\frac{35}{2} \\ 
+T_{2,3}& = \frac{175}{2} - 80 +\frac{35}{2} \\
+T_{2,3}& = \frac{210}{2} - 80\\
+T_{2,3}& = 105 - 80  \\
+T_{2,3}& = 25  \\
+\end{align*}
+In order to find the error for this polynomial we will use Taylor Remainder (page 271) such that:
+\[ |R_{2,3}| = |f(5) - T_{2,3}(5)| \]
+We can thus apply Taylor's Theorem (page 272), such that this becomes:
+\begin{align*}
+|R_{2,3}| & = f(5) - T_{2,3}(5)|  \\ 
+|R_{2,3}| & = |\frac{f'''(c)}{(2+1)!}(5-3)^(2+1)|  \\
+|R_{2,3}| & = |\frac{f'''(c)}{(3!}(2)^(3)|   \\
+|R_{2,3}| & = |\frac{f'''(c)}{6}8|  
+\end{align*}
+In order to find the maximum error we thus need to find the largest possible magnitude of f'''(c), and since:
+\[ -4 \leq f'''(c) \leq -1 \]
+The largest possible magnitude is |-4|, so the largest possible error will be when $f'''(c) = -4$. Plugging this in we get:
+\begin{align*}
+|R_{2,3}| & = |\frac{-4}{6}8|  
+|R_{2,3}| & = |\frac{-16}{3}|  
+R_{2,3} & = \frac{16}{3}
+\end{align*}
+Therefore the upper bound on the error is $\frac{16}{3}$
+Since we are finding this polynomial centered at x = 3, the polynomial becomes:
+\[ T_{2,3}= \frac{f(3)}{0!}(x-3)^0 + \frac{f'(3)}{1!}(x-3)^1 + \frac{f''(3)}{2!}(x-3)^2  \]
+From definition we know that $f(3) = 1$, $f'(3) = 5$ and $f''(3) = 7$, so we can simplify:
+\begin{align*}
+T_{2,3}& = \frac{1}{0!} + \frac{5}{1!}(x-3)^1 + \frac{7}{2!}(x-3)^2 \\
+T_{2,3}& = 1 + 5(x-3) + \frac{7}{2}(x^2-6x+9) \\
+T_{2,3}& = 1 + 5x - 15 + \frac{7x^2}{2} - \frac{42x}{2} +\frac{63}{2}  \\
+T_{2,3}& = \frac{2}{2} + 5x - \frac{30}{2} + \frac{7x^2}{2} - 21x +\frac{63}{2}  \\
+T_{2,3}& = \frac{7x^2}{2} - 16x +\frac{35}{2}  \\
+\end{align*}
+Thus giving us the answer for the second order Taylor Polynomial. \\
+
+
 \end{document}
