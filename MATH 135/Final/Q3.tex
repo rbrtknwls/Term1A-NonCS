@@ -58,7 +58,7 @@ T_{2,3}& = \frac{210}{2} - 80\\
 T_{2,3}& = 105 - 80  \\
 T_{2,3}& = 25  \\
 \end{align*}
-In order to find the error for this polynomial we will use Taylor Remainder (page 271) such that:
+In order to find the magnitude of error for this polynomial we will use Taylor Remainder (page 271) such that:
 \[ |R_{2,3}| = |f(5) - T_{2,3}(5)| \]
 We can thus apply Taylor's Theorem (page 272), such that this becomes:
 \begin{align*}
@@ -71,22 +71,19 @@ In order to find the maximum error we thus need to find the largest possible mag
 \[ -4 \leq f'''(c) \leq -1 \]
 The largest possible magnitude is |-4|, so the largest possible error will be when $f'''(c) = -4$. Plugging this in we get:
 \begin{align*}
-|R_{2,3}| & = |\frac{-4}{6}8|  
-|R_{2,3}| & = |\frac{-16}{3}|  
+|R_{2,3}| & = |\frac{-4}{6}8|  \\
+|R_{2,3}| & = |\frac{-16}{3}|  \\
 R_{2,3} & = \frac{16}{3}
 \end{align*}
-Therefore the upper bound on the error is $\frac{16}{3}$
-Since we are finding this polynomial centered at x = 3, the polynomial becomes:
-\[ T_{2,3}= \frac{f(3)}{0!}(x-3)^0 + \frac{f'(3)}{1!}(x-3)^1 + \frac{f''(3)}{2!}(x-3)^2  \]
-From definition we know that $f(3) = 1$, $f'(3) = 5$ and $f''(3) = 7$, so we can simplify:
-\begin{align*}
-T_{2,3}& = \frac{1}{0!} + \frac{5}{1!}(x-3)^1 + \frac{7}{2!}(x-3)^2 \\
-T_{2,3}& = 1 + 5(x-3) + \frac{7}{2}(x^2-6x+9) \\
-T_{2,3}& = 1 + 5x - 15 + \frac{7x^2}{2} - \frac{42x}{2} +\frac{63}{2}  \\
-T_{2,3}& = \frac{2}{2} + 5x - \frac{30}{2} + \frac{7x^2}{2} - 21x +\frac{63}{2}  \\
-T_{2,3}& = \frac{7x^2}{2} - 16x +\frac{35}{2}  \\
-\end{align*}
-Thus giving us the answer for the second order Taylor Polynomial. \\
+Therefore the upper bound on the error is $\frac{16}{3}$.\\
 
+\textbf{Q03d} We know from $c$ that when we subtract the Taylor Polynomial from the original function we get:
+\[  f(5) - T_{2,3}(5) = \frac{-16}{3}  \\  \]
+(We can get rid of the absolute values as we are no longer looking at just the magnitude), as well this implies that:
+\begin{align*}
+ f(5) - T_{2,3}(5) & < 0 \\
+ f(5) & < T_{2,3}(5) 
+\end{align*}
+Since our Taylor Polynomial is larger then the original function we can state with certainty that it is an overestimate. 
 
 \end{document}
