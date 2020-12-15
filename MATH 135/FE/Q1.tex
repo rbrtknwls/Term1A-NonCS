@@ -22,10 +22,10 @@ Congruent To Remainder (CTR), tells us that:
 From definition of divisibility we can rewrite this as (for some $t \in \mathbb{Z}$):
 \begin{align*}
 12t &= c - 8s \\
- 12t - 8s &= c \\
- 2(6t - 4s) &= c 
+ 12t + 8s &= c \\
+ 2(6t + 4s) &= c 
 \end{align*}
-Therefore we will let some integer $n = 6t - 4s$, we thus find that:
+Therefore we will let some integer $n = 6t + 4s$, we thus find that:
 \[ 2n = c \]
 By definition we find that:
 \[ 2|c \]
@@ -46,5 +46,11 @@ Notice that $0 \leq [s] \leq 11$, thus we can construct a table that gives all p
  \hline
 \end{tabular}
 \end{center}
-Therefore we notice that $e= 2$ never coursers as a solution for any value of s. Therefore we know that the set S does not contain $e=2$.\\ Thus we have shown that the element $e=2$ exists within T but not within S.
+Therefore we notice that $e= 2$ never occurs as a solution for any value of s. Therefore we know that the set S does not contain $e=2$.
+\\ 
+More over we can also prove that it doesn't exist within S using Linear Congruence Theorem (LCT). The equation that we will check is:
+\[ 2 = 8s \text{ (mod 12)} \]
+We know this will have a solution if and only if $d|2$, where $d = \gcd(8, 12) = 4$, however this is false as:
+\[ 4 \not|\text{ } 2 \]
+Thus we have proved via both methods that $e=2$ does not exists within S. But does exist within T. \\
 \end{document}
