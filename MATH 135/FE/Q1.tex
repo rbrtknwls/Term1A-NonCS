@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q1A.} For S to be a subset of T it would imply that every element of S belongs to T. To show this is the case, I will demonstrate that every solution to S is also solution to T.\\\\
+To start we know that the solution set of S is given by (where for some $s \in \mathbb{Z}$):
+\[ c = 8s \text{ (mod 12)} \]
+Congruent To Remainder (CTR), tells us that:
+\[ 12|(c - 8s) \]
+From definition of divisibility we can rewrite this as (for some $t \in \mathbb{Z}$):
+\begin{align*}
+12t &= c - 8s \\
+ 12t + 8s &= c \\
+ 2(6t + 4s) &= c 
+\end{align*}
+Therefore we will let some integer $n = 6t + 4s$, we thus find that:
+\[ 2n = c \]
+By definition we find that:
+\[ 2|c \]
+Which shows that every solution to S is a solution to T, and thus S is a subset of T. \\\\\\
+\textbf{Q1B.} Lets look at the element $e =  2$ in set T, we know that:
+\[ 2|2 \]
+Thus we know that $e = 2$ is a element of T. We know that the solutions (c) to S are of the form (for some integer s):
+\begin{align*}
+c = [8][s] \text{ (mod 12)} 
+\end{align*}
+Notice that $0 \leq [s] \leq 11$, thus we can construct a table that gives all possible values of c:
+\begin{center}
+ \begin{tabular}{||c | c c c c c c c c c c c c||} 
+ \hline
+ [s] & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\ [0.5ex] 
+ \hline
+ [s][8] (mod 12) & 0 & 8 & 4 & 0 & 8 &  4 & 0 & 8 & 4 & 0 & 8 & 4\\ 
+ \hline
+\end{tabular}
+\end{center}
+Therefore we notice that $e= 2$ never occurs as a solution for any value of s. Therefore we know that the set S does not contain $e=2$.
+\\ 
+More over we can also prove that it doesn't exist within S using Linear Congruence Theorem (LCT). The equation that we will check is:
+\[ 2 = 8s \text{ (mod 12)} \]
+We know this will have a solution if and only if $d|2$, where $d = \gcd(8, 12) = 4$, however this is false as:
+\[ 4 \not|\text{ } 2 \]
+Thus we have proved via both methods that $e=2$ does not exists within S. But does exist within T. \\
+\end{document}

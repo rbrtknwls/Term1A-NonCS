@@ -1,0 +1,38 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q9.} For all natural numbers let $q$ and $t$, there exists integers $r$, $s$ such that:
+\[ 18qu - 35tv = 1 \]
+Assuming the hypothesis, we can rearrange to get that:
+\[ (9q)(2u) - (7v)(5t) = 1 \]
+Therefore from this equation we can know some integers ($x_0,y_0 \in \mathbb{Z}$) exist such that:
+\[ x_0 = 2u \text{ and } y_0 = -5t \]
+So our hypothesis equation will become:
+\[ (9q)x_0 + (7v)y_0 = 1 \]
+We can thus apply CCT, which tells us that since integers $x_0,y_0$ exist:
+\[ \gcd(9q,7v) = 1 \]
+If we go back to our hypothesis equation, we know some integers ($x_1,y_1 \in \mathbb{Z}$) exist such that:
+\[ x_1 = 9q \text{ and } y_1 = -7v \]
+So our hypothesis equation will become:
+\[ x_1(2u) + y_1(5t) = 1 \]
+We can thus apply CCT, which tells us that since integers $x_1,y_1$ exist:
+\[ \gcd(5t,2u) = 1 \]
+Therefore for all natural numbers $q$ and $t$, there exists integers $r$, $s$ such that:
+\[ 18qu - 35tv = 1 \]
+We thus know that:
+\[ \gcd(9q,7v) = 1 \text{ and } \gcd(5t,2u) = 1  \]
+\[ \gcd(9q,7v) = \gcd(5t,2u) \]
+\end{document}
