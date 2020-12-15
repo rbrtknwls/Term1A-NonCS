@@ -75,6 +75,90 @@ We also know that $|(\cos(\frac{3\pi}{4}) + \sin(\frac{3\pi}{4})i)| = 1$ as its 
 \end{align*}
 By finding the shortest non repeating sequence within z, we can find the positive integer $p$ such that for any positive integer $n$:
 \[ |z_{n+p}| = |z_n| \]
-
-
+To do this we will list the values of $z_n$ until we find a repeating term (we wont list $z_0$ as 0 is not a positive integer):
+\begin{center}
+ \begin{tabular}{||c | c||} 
+\hline
+ $|z_1|$ &  $\sqrt2$ (from Part A) \\ 
+ \hline
+ $|z_2|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = \frac {\sqrt2}{4}$\\ 
+ \hline
+ $|z_3|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = \frac {\sqrt2}{4\cdot\sqrt2} =  \frac {1}{4}$\\ 
+ \hline
+ $|z_4|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = \frac {4}{4\cdot\sqrt2} =  \frac {1}{\sqrt2}$\\ 
+ \hline
+ $|z_5|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = \frac {4}{\sqrt2} =  2\sqrt2$\\ 
+ \hline
+ $|z_6|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = 2\sqrt2\cdot\sqrt2 =  4$\\ 
+ \hline
+ $|z_7|$ & $ \frac {|z_{n-1}|}{|z_{n-2}|} = \frac {4}{2\sqrt2} =  \sqrt2$\\ 
+ \hline
+\end{tabular}
+\end{center}
+Therefore we notice a pattern that for any $z_n$ where $n$ is an integer:
+\[ n \equiv n_0 \text{ (mod 6)} \implies  |z_n| = |z_{n_0}| \]
+Therefore be definition this tells us that for some $k$:
+\[ n \equiv n + 6k \implies  |z_n| = |z_{n+6k}|\]
+Let $p = 6k$, the smallest positive integer of $p$ will happen when $k = 1$. Thus:
+\[ |z_n| = |z_{n+ p}| \text{ (where p = 6)} \]
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+\textbf{18c} We need to find a positive integer $q$ such that for every positive integer $n, z_n =  z_{n+q}$. This will happen when both:
+\[ |z_n| = |z_{n+q}| \text{ and } \arg(z_n) = \arg(z_{n+q}) \]
+From Part B we know that q must be be a multiple of 6. In order to get when the arguments are equal we must come up with a general expression for $\arg(z_n)$:
+\[ z_n = (\cos(\frac{3\pi}{4}) + \sin(\frac{3\pi}{4})i) \cdot z_{n-1} \cdot |z_{n-2}|^{-1} \]
+We know that real components will have no impact on our argument, so we can remove $|z_{n-2}|^{-1}$, so we get:
+\[ z_n = (\cos(\frac{3\pi}{4}) + \sin(\frac{3\pi}{4})i) \cdot z_{n-1} \]
+We can express $z_{n-1}$ in polar form such that for some integer $r_{n-1},\theta_{n-1}$:
+\[ z_{n-1} = r_{n-1}(\cos(\theta_{n-1}) + \sin(\theta_{n-1}))i) \]
+Plugging this back into our equation we get that:
+\[ z_n = (\cos(\frac{3\pi}{4}) + \sin(\frac{3\pi}{4})i) (r_{n-1}(\cos(\theta_{n-1}) + \sin(\theta_{n-1}))i)) \]
+Thus by Polar Multiplication in C (PMC), we know that this will simplify to:
+\[ z_n = r_{n-1}(\cos(\frac{3\pi}{4} +\theta_{n-1}) + \sin(\frac{3\pi}{4} + \theta_{n-1})i)  \]
+And the argument of this term will thus be:
+\begin{align*}
+ \arg(z_n)  &= \arg[r_{n-1}(\cos(\frac{3\pi}{4} +\theta_{n-1}) + \sin(\frac{3\pi}{4} + \theta_{n-1})i)]  \\
+&=  (\cos(\frac{9\pi}{12} +\theta_{n-1}) + \sin(\frac{9\pi}{12} + \theta_{n-1})i)\\
+&=  \frac{9\pi}{12} +\theta_{n-1}
+\end{align*}
+Thus we will now find the smallest $y$ such that:
+\[ \arg(z_n) = \arg(z_{n+y}) \]
+In order to do this we will find the shortest non repeating sequence within z by creating a list of all $\arg(z_n)$ up to the first repeat:
+\begin{center}
+ \begin{tabular}{||c | c ||} 
+\hline\\[-1em]
+ $\arg(z_1)$ &  $\frac{4\pi}{3} = \frac{16\pi}{12}$ (from Part A) \\ \\[-1em]
+ \hline \\[-1em]
+ $\arg(z_2)$ &  $\frac{9\pi}{12} +\theta_{n_1} = \frac{9\pi}{12} + \frac{16\pi}{12} = \frac{1\pi}{12}$\\ \\[-1em]
+ \hline \\[-1em]
+ $\arg(z_3)$ & $\frac{9\pi}{12} +\theta_{n_2} = \frac{9\pi}{12} + \frac{1\pi}{12} = \frac{10\pi}{12}$\\ \\[-1em]
+ \hline \\[-1em]
+ $\arg(z_4)$ & $\frac{9\pi}{12} +\theta_{n_3} = \frac{9\pi}{12} + \frac{10\pi}{12} = \frac{19\pi}{12}$\\ \\[-1em]
+ \hline \\[-1em]
+ $\arg(z_5)$ & $\frac{9\pi}{12} +\theta_{n_4} = \frac{9\pi}{12} + \frac{19\pi}{12} = \frac{4\pi}{12}$\\ \\[-1em]
+ \hline \\[-1em]
+ $\arg(z_6)$ & $\frac{9\pi}{12} +\theta_{n_5} = \frac{9\pi}{12} + \frac{4\pi}{12} = \frac{13\pi}{12}$\\ \\[-1em]
+ \hline \\[-1em]
+$\arg(z_7)$ & $\frac{9\pi}{12} +\theta_{n_6} = \frac{9\pi}{12} + \frac{13\pi}{12} = \frac{22\pi}{12}$\\  \\[-1em]
+ \hline  \\[-1em]
+$\arg(z_8)$ & $\frac{9\pi}{12} +\theta_{n_7} = \frac{9\pi}{12} + \frac{22\pi}{12} = \frac{7\pi}{12}$\\  \\[-1em]
+ \hline  \\[-1em]
+$\arg(z_9)$ & $\frac{9\pi}{12} +\theta_{n_8} = \frac{9\pi}{12} + \frac{7\pi}{12} = \frac{16\pi}{12}$\\  
+ \hline
+\end{tabular}
+\end{center}
+Therefore we notice a pattern that for any $z_n$ where $n$ is an integer:
+\[ n \equiv n_0 \text{ (mod 8)} \implies  \arg(z_n) = \arg(z_{n_0}) \]
+Therefore be definition this tells us that for some $k$:
+\[ n \equiv n + 8k \implies  \arg(z_n) = \arg(z_{n+9k})\]\\
+We thus know that for some positive integer $q$:
+\begin{align*}
+ q = 0 \text{ (mod6)} & \implies |z_n| = |z_{n+q}|  \\
+q = 0 \text{ (mod 8)} & \implies \arg(z_n) = \arg(z_{n+q})
+\end{align*}
+Thus by CTR, both of these conditions will be met (both conditions being met implies $z_n = z_{n+q}$) when:
+\[ q = 0 \text{ (mod 24)} \implies z_n = z_{n+q} \]
+Q is thus equal to (for some integer $t$):
+\[ q = 24t \]
+Thus the smallest positive integer of $q$ happens when $t = 1$ and so the smallest positive $q$ is 24. So we get:
+\[ z_n = z_{n+q} \text{ where q = 24} \]
 \end{document}
