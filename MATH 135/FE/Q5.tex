@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\textwidth 15cm 
+\textheight 21.3cm
+\evensidemargin 6mm
+\oddsidemargin 6mm
+\topmargin -1.1cm
+\setlength{\parskip}{1.5ex}
+
+
+\usepackage{amsfonts,amsmath,amssymb,enumerate}
+
+
+
+\begin{document}
+\parindent=0pt
+
+\textbf{Q5.} Let $m$ be an integer such that $m > 1$. Since $m >1$, Unique Factorization Theorem (UFT) tells us that we can express m as a product of prime factors uniquely such that (for some $z \in \mathbb{Z}$, $z \geq 1$):
+\[ n = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_z^{\alpha_z}  \]
+where $p_i$ (for 1 $\leq i \leq z$) represent the prime divisors of m, and where the positive integer $\alpha_i$ could be zero. This can be re-written in product notation such that:
+\[ m  = \prod_{i=1}^z(p_i^{\alpha_i}) \]
+We know that $\alpha_i$ is a positive integer, thus the Division Algorithm (DA) tells us that the integers $g_i$ and $r_i$ exist such that:
+\[ \alpha_i = 5g_i + r_i \text { (0 $\leq r < 5$)}\]
+Thus we can rewrite $n$ as:
+\begin{align*}
+m  &= \prod_{i=1}^z(p_i^{5g_i + r_i}) \\
+m  &= \prod_{i=1}^z(p_i^{5g_i}p^r_i)\\
+m  &= \prod_{i=1}^zp_i^{5g_i} \cdot \prod_{i=1}^zp^r_i\\
+m  &= (\prod_{i=1}^zp_i^{g_i})^5 \cdot \prod_{i=1}^zp^r_i
+\end{align*}
+Using the reverse of Unique Factorization Theorem (UFT) we know we can define a positive integer $s$ to be:
+\[ s = \prod_{i=1}^zp^r_i  \text { (0 $\leq r < 5$)}\]
+Therefore we know that $r$ is always less then 5, so this means that s contains no fifth powers as thus $s$ is thus five-free as it cant be divisible by any fifth power.\\\\
+Plugging a positive five-free integer $s$ back into our equation we get that:
+\[ m  = (\prod_{i=1}^zp_i^{g_i})^5 \cdot s\]
+Using the reverse of Unique Factorization Theorem (UFT) we know we can define a positive integer $t$ to be:
+\[ t = \prod_{i=1}^zp_i^{q_i}  \]
+Thus plugging it back into our original equation we get:
+\[ m  = (t)^5 \cdot \prod_{i=1}^zp^r_i \]
+where $s$ and $t$ are positive integers and $s$ is five-free.
+\end{document}
